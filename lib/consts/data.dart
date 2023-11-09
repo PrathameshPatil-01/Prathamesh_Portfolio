@@ -1,15 +1,19 @@
 import 'package:pp_portfolio/models/app_model.dart';
+import 'package:pp_portfolio/models/certifications_model.dart';
 import 'package:pp_portfolio/models/color_model.dart';
 import 'package:pp_portfolio/models/device_model.dart';
 import 'package:pp_portfolio/models/education_model.dart';
+import 'package:pp_portfolio/models/projects_model.dart';
+import 'package:pp_portfolio/screen/miniProjects/certifications/certifications.dart';
 import 'package:pp_portfolio/screen/miniProjects/education/education.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import 'package:pp_portfolio/models/skill_model.dart';
 import 'package:pp_portfolio/screen/miniProjects/about/about.dart';
+import 'package:pp_portfolio/screen/miniProjects/projects/projects.dart';
 import 'package:pp_portfolio/screen/miniProjects/skills/skills.dart';
+import 'package:pp_portfolio/screen/miniProjects/contactme/contactme.dart';
 
 const double baseHeight = 790;
 const double baseWidth = 1440;
@@ -59,19 +63,19 @@ List<ColorModel> colorPalette = [
       )),
   ColorModel(
     svgPath: "assets/images/cloudyBlue.svg",
-    color: Colors.blue,
+    color: const Color.fromARGB(255, 33, 47, 243),
     gradient: const LinearGradient(
       begin: Alignment.topLeft,
-      end: Alignment(-0.31, 0.95),
-      colors: [Colors.blue, Color.fromARGB(255, 7, 3, 40)],
+      end: Alignment(-0.20, 0.95),
+      colors: [Color.fromARGB(255, 37, 33, 243), Color.fromARGB(220, 1, 0, 11),Color.fromARGB(54, 1, 0, 11)],
     ),
   ),
   ColorModel(
     svgPath: "assets/images/cloudyBlue.svg",
     color: Colors.purple,
     gradient: const LinearGradient(
-      colors: [Color(0xffc95edb), Color.fromARGB(255, 0, 0, 0)],
-      stops: [0, 1],
+      colors: [Color(0xffc95edb), Color.fromARGB(212, 0, 0, 0),Color.fromARGB(75, 0, 0, 0)],
+      // stops: [0, 1],
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
     ),
@@ -106,6 +110,30 @@ List<AppModel> apps = [
     icon: FontAwesomeIcons.edge,
     screen: const Education(),
   ),
+  AppModel(
+    title: "Projects",
+    color: Colors.white,
+    icon: FontAwesomeIcons.diagramProject,
+    screen: const Project(),
+  ),
+  AppModel(
+    title: "Certifications",
+    color: Colors.white,
+    icon: FontAwesomeIcons.page4,
+    screen: const Certification(),
+  ),
+  AppModel(
+    title: "Resume",
+    color: Colors.white,
+    icon: FontAwesomeIcons.noteSticky,
+    link: resumeLink,
+  ),
+  AppModel(
+    title: "Contact Me",
+    color: Colors.white,
+    icon: FontAwesomeIcons.draft2digital,
+    screen: const ContactMe(),
+  ),
 ];
 
 List<AppModel> socialApps = [
@@ -133,7 +161,8 @@ const String linkedIn =
     "https://www.linkedin.com/in/prathamesh-patil-10-12-2001-pp/";
 const String github = "https://github.com/PrathameshPatil-01";
 const String twitter = "https://twitter.com/imPBPatil";
-const String resumeLink = "";
+const String resumeLink =
+    "https://drive.google.com/file/d/19y-ivY9px_W5u8H25DKzFWcJ-RPEVkl1/view?usp=sharing";
 const String email = "prathameshp800@gmail.com";
 String introduction = "Prathamesh Patil ";
 
@@ -302,7 +331,7 @@ List<SkillsModel> languages = [
       skillName: "English", colorS: const Color.fromARGB(255, 255, 0, 0)),
 ];
 
-final List<Educations> education = [
+final List<Educations> educations = [
   Educations(
     color: Colors.red,
     location: "Pune,Maharashtra,India",
@@ -311,7 +340,7 @@ final List<Educations> education = [
     startDate: 'June 2021',
     endDate: 'July 2023',
     bulletPoints: [
-      "| CGPA: 8.9 |",
+      "CGPA: 8.9",
     ],
   ),
   Educations(
@@ -322,7 +351,7 @@ final List<Educations> education = [
     startDate: 'June 2017',
     endDate: 'June 2019',
     bulletPoints: [
-      '| Percentage: 83% |',
+      'Percentage: 83%',
     ],
   ),
   Educations(
@@ -333,7 +362,86 @@ final List<Educations> education = [
     startDate: 'June 2012',
     endDate: 'June 2017',
     bulletPoints: [
-      '| Percentage: 84% |',
+      'Percentage: 84% ',
     ],
   ),
+];
+
+final List<Certifications> certifications = [
+  Certifications(
+      color: Colors.amber,
+      title: "1. 100 Days of Code: The Complete Python Pro Bootcamp for 2021",
+      issuedBy: "UDEMY",
+      length: "64 Total Hours",
+      endDate: "Nov. 14  2021",
+      bulletPoints: [""]),
+  Certifications(
+      color: Colors.amber,
+      title: "2. Flutter & Dart - The Complete Guide [2023 Edition]",
+      issuedBy: "UDEMY",
+      length: "30 Total Hours",
+      endDate: "Oct. 5  2023",
+      bulletPoints: [""])
+];
+
+final List<Projects> projects = [
+  Projects(
+      color: Colors.amber,
+      title: "1. Flutter Chat App ",
+      startDate: "",
+      endDate: "",
+      bulletPoints: [
+        "Description: Developed a dynamic chat app providing real-time communication. I’ve tried to implement max features from WhatsApp.",
+        " GitHub Repository: https://github.com/PrathameshPatil-01/CHAT_APP-FLUTTER.git"
+      ]),
+  Projects(
+      color: Colors.amber,
+      title: "2. Flutter Expense Tracker App ",
+      startDate: "",
+      endDate: "",
+      bulletPoints: [
+        "Description: Track expenses with their category and date of expense. Visualize your spending habits with an intuitive bar chart.",
+        "GitHub Repository: https://github.com/PrathameshPatil-01/EXPENSE_TRACKER-FLUTTER.git "
+      ]),
+  Projects(
+      color: Colors.amber,
+      title: "3. Flutter Quiz App ",
+      startDate: "",
+      endDate: "",
+      bulletPoints: [
+        "Description: The Quiz App features a series of questions and instant feedback on correct answers upon completion.",
+        "GitHub Repository: https://github.com/PrathameshPatil-01/FLUTTER_AND_DART_QUIZ_APP.git"
+      ]),
+  Projects(
+      color: Colors.amber,
+      title: "4. E-Shopee (e-Commerce Website)",
+      startDate: "",
+      endDate: "",
+      bulletPoints: [
+        "Description: A simple e-commerce website with complete user authentication & authorization, responsiveness & more fundamentals. ",
+        "GitHub Repository: https://github.com/PrathameshPatil-01/E-SHOPEE_PYTHON.git",
+        "Website Link: https://e-shopee-python-prathamesh.onrender.com "
+      ]),
+  Projects(
+      color: Colors.amber,
+      title: "5. IOT-Based Smart Attendance System (Fourth Year Project) ",
+      startDate: "",
+      endDate: "",
+      bulletPoints: [
+        " Description: This system combines RFID and Face Recognition for secure, contactless attendance with simple web interface. ",
+        "Technologies Used: HTML, CSS, Bootstrap, Python ",
+        "Hardware requirements: RFID Reader, Pi Camera, Raspberry Pi, LCD 16x2, Connecting Wires ",
+        "Software requirements: Raspbian for Raspberry Pi, Python, SQLite Database ",
+        "GitHub Repository: https://github.com/PrathameshPatil-01/B.E.PROJECT-ENTC.git "
+      ]),
+  Projects(
+      color: Colors.amber,
+      title: "6. Elevator Cabin Light Automation (Third Year Project)",
+      startDate: "",
+      endDate: "",
+      bulletPoints: [
+        "Description: The system made with minimum cost possible to automate the cabin lights to save energy.",
+        "Hardware requirements: IR Sensors, Arduino Uno, LCD 16x2, Connecting Wires, LED Lights, Power Supply Unit ",
+        "Software requirements: Arduino IDE, Embedded C, Proteus"
+      ]),
 ];

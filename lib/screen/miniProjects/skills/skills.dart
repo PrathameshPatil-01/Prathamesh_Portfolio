@@ -54,7 +54,7 @@ class Skills extends StatelessWidget {
                   height: 20,
                 ),
                 const Divider(
-                  color: Colors.grey,
+                  color: Colors.red,
                 ),
                 const SizedBox(
                   height: 20,

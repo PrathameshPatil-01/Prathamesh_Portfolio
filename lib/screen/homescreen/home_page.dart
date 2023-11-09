@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
     theme.widthRatio = theme.size.width / baseWidth;
     theme.heightRatio = theme.size.height / baseHeight;
     bool phone = false;
-    if (size.width < 1000) {
+    if (size.width < 900) {
       phone = true;
       currentState.changeSelectedDevice(
         devices[1].device,

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pp_portfolio/consts/data.dart';
-import 'package:pp_portfolio/models/education_model.dart';
+import 'package:pp_portfolio/models/projects_model.dart';
 
-class Education extends StatelessWidget {
-  const Education({super.key});
+class Project extends StatelessWidget {
+  const Project({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,28 +23,28 @@ class Education extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          ...List.generate(educations.length, (index) {
-            Educations education = educations[index];
+          ...List.generate(projects.length, (index) {
+            Projects project = projects[index];
             return ExpansionTile(
               tilePadding: const EdgeInsets.all(20),
               childrenPadding: const EdgeInsets.all(10),
               leading: Container(
                 width: 2,
                 height: 100,
-                color: education.color,
+                color: project.color,
               ),
               title: Text(
-                education.title,
+                project.title,
                 style: GoogleFonts.inter(fontWeight: FontWeight.bold),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 5),
                 child: Text(
-                  '${education.name}\n${education.startDate} - ${education.endDate}\n${education.location}',
+                  '\n | ${project.startDate} - ${project.endDate} | ',
                   style: GoogleFonts.inter(fontSize: 13, color: Colors.red),
                 ),
               ),
-              children: education.bulletPoints.map((bulletPoint) {
+              children: project.bulletPoints.map((bulletPoint) {
                 return ListTile(
                   contentPadding: const EdgeInsets.symmetric(horizontal: 15.0),
                   // leading: const Icon(Icons.arrow_right),

@@ -178,7 +178,7 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                     )),
           ),
           SizedBox(
-            height: size.height * 0.4,
+            height: currentState.currentDevice != Devices.ios.iPad ?  size.height * 0.15 : size.height * 0.35,
           ),
           Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
