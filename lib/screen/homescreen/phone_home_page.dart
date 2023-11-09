@@ -118,9 +118,9 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                           CustomButton(
                             margin: const EdgeInsets.only(bottom: 5),
                             borderRadius: currentState.currentDevice ==
-                                    Devices.ios.iPhone13
-                                ? 8
-                                : 100,
+                                    Devices.android.onePlus8Pro
+                                ? 100
+                                : 10,
                             onPressed: () {
                               if (apps[index].link != null) {
                                 // open the url in the webpage
@@ -178,7 +178,9 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                     )),
           ),
           SizedBox(
-            height: currentState.currentDevice != Devices.ios.iPad ?  size.height * 0.15 : size.height * 0.35,
+            height: currentState.currentDevice != Devices.ios.iPad
+                ? size.height * 0.15
+                : size.height * 0.35,
           ),
           Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
@@ -197,9 +199,9 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                           CustomButton(
                             margin: const EdgeInsets.only(bottom: 5),
                             borderRadius: currentState.currentDevice ==
-                                    Devices.ios.iPhone13
-                                ? 8
-                                : 100,
+                                    Devices.android.onePlus8Pro
+                                ? 100
+                                : 10,
                             onPressed: () {
                               if (socialApps[index].link != null) {
                                 // open the url in the webpage

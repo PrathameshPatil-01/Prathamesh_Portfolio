@@ -67,14 +67,22 @@ List<ColorModel> colorPalette = [
     gradient: const LinearGradient(
       begin: Alignment.topLeft,
       end: Alignment(-0.20, 0.95),
-      colors: [Color.fromARGB(255, 37, 33, 243), Color.fromARGB(220, 1, 0, 11),Color.fromARGB(54, 1, 0, 11)],
+      colors: [
+        Color.fromARGB(255, 37, 33, 243),
+        Color.fromARGB(220, 1, 0, 11),
+        Color.fromARGB(54, 1, 0, 11)
+      ],
     ),
   ),
   ColorModel(
     svgPath: "assets/images/cloudyBlue.svg",
     color: Colors.purple,
     gradient: const LinearGradient(
-      colors: [Color(0xffc95edb), Color.fromARGB(212, 0, 0, 0),Color.fromARGB(75, 0, 0, 0)],
+      colors: [
+        Color(0xffc95edb),
+        Color.fromARGB(212, 0, 0, 0),
+        Color.fromARGB(75, 0, 0, 0)
+      ],
       // stops: [0, 1],
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
