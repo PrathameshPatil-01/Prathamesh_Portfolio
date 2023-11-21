@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ContactMe extends StatelessWidget {
@@ -28,9 +29,11 @@ class ContactMe extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    const Center(
-                      child: CircleAvatar(
-                        radius: 50,
+                    Center(
+                      child: SvgPicture.asset(
+                        "assets/icons/Connect.svg",
+                        width: 200,
+                        height: 200,
                       ),
                     ),
                     const SizedBox(

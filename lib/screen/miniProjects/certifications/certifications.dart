@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pp_portfolio/consts/data.dart';
 import 'package:pp_portfolio/models/certifications_model.dart';
@@ -14,10 +15,11 @@ class Certification extends StatelessWidget {
           // const SizedBox(
           //   height: 20,
           // ),
-          const Center(
-            child: Icon(
-              Icons.auto_stories_rounded,
-              size: 100,
+          Center(
+            child: SvgPicture.asset(
+              "assets/icons/Certifications.svg",
+              width: 170,
+              height: 170,
             ),
           ),
           const SizedBox(

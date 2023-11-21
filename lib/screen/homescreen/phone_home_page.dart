@@ -146,7 +146,14 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                                     : 50,
                             asset: apps[index].assetPath != null
                                 ? ButtonAsset(apps[index].assetPath!,
-                                    width: 30, height: 30)
+                                    width: currentState.currentDevice ==
+                                            Devices.ios.iPad
+                                        ? 50
+                                        : 40,
+                                    height: currentState.currentDevice ==
+                                            Devices.ios.iPad
+                                        ? 50
+                                        : 40)
                                 : null,
                             child: apps[index].assetPath == null
                                 ? Center(
@@ -168,8 +175,8 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                                 style: GoogleFonts.openSans(
                                     fontSize: currentState.currentDevice ==
                                             Devices.ios.iPad
-                                        ? 16
-                                        : 12,
+                                        ? 17
+                                        : 13,
                                     color: Colors.white,
                                     fontWeight: FontWeight.w400),
                               ),
@@ -229,7 +236,14 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                                     : 50,
                             asset: socialApps[index].assetPath != null
                                 ? ButtonAsset(socialApps[index].assetPath!,
-                                    width: 30, height: 30)
+                                    width: currentState.currentDevice ==
+                                            Devices.ios.iPad
+                                        ? 50
+                                        : 35,
+                                    height: currentState.currentDevice ==
+                                            Devices.ios.iPad
+                                        ? 50
+                                        : 35)
                                 : null,
                             child: socialApps[index].assetPath == null
                                 ? Center(
@@ -251,8 +265,8 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                                 style: GoogleFonts.openSans(
                                     fontSize: currentState.currentDevice ==
                                             Devices.ios.iPad
-                                        ? 16
-                                        : 12,
+                                        ? 17
+                                        : 13,
                                     color: Colors.white,
                                     fontWeight: FontWeight.w400),
                               ),

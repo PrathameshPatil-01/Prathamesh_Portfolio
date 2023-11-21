@@ -112,48 +112,54 @@ List<AppModel> apps = [
   AppModel(
     title: "About",
     color: Colors.white,
-    icon: Icons.person,
+    assetPath: "assets/icons/AboutMe.svg",
     screen: const AboutMe(),
   ),
   AppModel(
     title: "Skills",
     color: Colors.white,
-    icon: Icons.ac_unit_rounded,
+    assetPath: "assets/icons/Skills.svg",
     screen: const Skills(),
   ),
   AppModel(
     title: "Education",
     color: Colors.white,
-    icon: FontAwesomeIcons.edge,
+    assetPath: "assets/icons/Education.svg",
     screen: const Education(),
   ),
   AppModel(
     title: "Projects",
     color: Colors.white,
-    icon: FontAwesomeIcons.diagramProject,
+    assetPath: "assets/icons/Projects.svg",
     screen: const Project(),
   ),
   AppModel(
     title: "Certifications",
     color: Colors.white,
-    icon: FontAwesomeIcons.page4,
+    assetPath: "assets/icons/Certifications.svg",
     screen: const Certification(),
   ),
   AppModel(
     title: "Resume",
     color: Colors.white,
-    icon: FontAwesomeIcons.noteSticky,
+    assetPath: "assets/icons/Resume.svg",
     link: resumeLink,
   ),
   AppModel(
     title: "Contact Me",
     color: Colors.white,
-    icon: FontAwesomeIcons.draft2digital,
+    assetPath: "assets/icons/Connect.svg",
     screen: const ContactMe(),
   ),
 ];
 
 List<AppModel> socialApps = [
+  AppModel(
+    title: "GitHub",
+    assetPath: "assets/icons/Github-Light.svg",
+    color: Colors.white,
+    link: github,
+  ),
   AppModel(
     title: "LinkedIn",
     assetPath: "assets/icons/Linkedin.svg",
@@ -162,15 +168,9 @@ List<AppModel> socialApps = [
   ),
   AppModel(
     title: "Twitter/X",
-    assetPath: "assets/icons/Twitter.svg",
+    assetPath: "assets/icons/X.svg",
     color: Colors.white,
     link: twitter,
-  ),
-  AppModel(
-    title: "GitHub",
-    assetPath: "assets/icons/Github-Light.svg",
-    color: Colors.white,
-    link: github,
   ),
 ];
 
@@ -364,10 +364,26 @@ List<SkillsModel> skills = [
 ];
 
 List<SkillsModel> languages = [
-  SkillsModel(skillName: "Marathi", colorS: Colors.orange),
-  SkillsModel(skillName: "Hindi", colorS: Colors.black),
   SkillsModel(
-      skillName: "English", colorS: const Color.fromARGB(255, 255, 0, 0)),
+    skillName: "Marathi",
+    colorS: Colors.orange,
+    assetPath: "assets/icons/Hindi.svg",
+    hrefPath:
+        "https://mr.wikipedia.org/wiki/%E0%A4%AE%E0%A4%B0%E0%A4%BE%E0%A4%A0%E0%A5%80_%E0%A4%AD%E0%A4%BE%E0%A4%B7%E0%A4%BE",
+  ),
+  SkillsModel(
+    skillName: "Hindi",
+    colorS: Colors.black,
+    assetPath: "assets/icons/Hindi.svg",
+    hrefPath:
+        "https://hi.wikipedia.org/wiki/%E0%A4%B9%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%80",
+  ),
+  SkillsModel(
+    skillName: "English",
+    colorS: const Color.fromARGB(255, 255, 0, 0),
+    assetPath: "assets/icons/English.svg",
+    hrefPath: "https://en.wikipedia.org/wiki/English_language",
+  ),
 ];
 
 final List<Educations> educations = [

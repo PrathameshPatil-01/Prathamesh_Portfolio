@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pp_portfolio/consts/data.dart';
 
@@ -37,9 +38,11 @@ class _AboutMeState extends State<AboutMe> {
                 const SizedBox(
                   height: 20,
                 ),
-                const Center(
-                  child: CircleAvatar(
-                    radius: 50,
+                Center(
+                  child: SvgPicture.asset(
+                    "assets/icons/AboutMe.svg",
+                    width: 200,
+                    height: 200,
                   ),
                 ),
                 Container(
