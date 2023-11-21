@@ -117,6 +117,9 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                         children: [
                           CustomButton(
                             margin: const EdgeInsets.only(bottom: 5),
+                            isThreeD: true,
+                            shadowColor: Colors.black,
+                            backgroundColor: Colors.white,
                             borderRadius: currentState.currentDevice ==
                                     Devices.android.onePlus8Pro
                                 ? 100
@@ -145,7 +148,6 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                                 ? ButtonAsset(apps[index].assetPath!,
                                     width: 30, height: 30)
                                 : null,
-                            backgroundColor: apps[index].color,
                             child: apps[index].assetPath == null
                                 ? Center(
                                     child: Icon(
@@ -198,6 +200,9 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                         children: [
                           CustomButton(
                             margin: const EdgeInsets.only(bottom: 5),
+                            isThreeD: true,
+                            shadowColor: Colors.black,
+                            backgroundColor: Colors.white,
                             borderRadius: currentState.currentDevice ==
                                     Devices.android.onePlus8Pro
                                 ? 100
@@ -226,7 +231,6 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                                 ? ButtonAsset(socialApps[index].assetPath!,
                                     width: 30, height: 30)
                                 : null,
-                            backgroundColor: socialApps[index].color,
                             child: socialApps[index].assetPath == null
                                 ? Center(
                                     child: Icon(

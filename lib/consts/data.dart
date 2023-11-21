@@ -15,6 +15,15 @@ import 'package:pp_portfolio/screen/miniProjects/projects/projects.dart';
 import 'package:pp_portfolio/screen/miniProjects/skills/skills.dart';
 import 'package:pp_portfolio/screen/miniProjects/contactme/contactme.dart';
 
+const String linkedIn =
+    "https://www.linkedin.com/in/prathamesh-patil-10-12-2001-pp/";
+const String github = "https://github.com/PrathameshPatil-01";
+const String twitter = "https://twitter.com/imPBPatil";
+const String resumeLink =
+    "https://drive.google.com/file/d/19y-ivY9px_W5u8H25DKzFWcJ-RPEVkl1/view?usp=sharing";
+const String email = "prathameshp800@gmail.com";
+const String introduction = "Prathamesh Patil ";
+
 const double baseHeight = 790;
 const double baseWidth = 1440;
 
@@ -147,187 +156,209 @@ List<AppModel> apps = [
 List<AppModel> socialApps = [
   AppModel(
     title: "LinkedIn",
-    assetPath: "assets/icons/linkedin.svg",
+    assetPath: "assets/icons/Linkedin.svg",
     color: Colors.white,
     link: linkedIn,
   ),
   AppModel(
     title: "Twitter/X",
-    assetPath: "assets/icons/twitter.svg",
+    assetPath: "assets/icons/Twitter.svg",
     color: Colors.white,
     link: twitter,
   ),
   AppModel(
     title: "GitHub",
-    assetPath: "assets/icons/github.svg",
+    assetPath: "assets/icons/Github-Light.svg",
     color: Colors.white,
     link: github,
   ),
 ];
 
-const String linkedIn =
-    "https://www.linkedin.com/in/prathamesh-patil-10-12-2001-pp/";
-const String github = "https://github.com/PrathameshPatil-01";
-const String twitter = "https://twitter.com/imPBPatil";
-const String resumeLink =
-    "https://drive.google.com/file/d/19y-ivY9px_W5u8H25DKzFWcJ-RPEVkl1/view?usp=sharing";
-const String email = "prathameshp800@gmail.com";
-String introduction = "Prathamesh Patil ";
-
 List<SkillsModel> skills = [
   SkillsModel(
     skillName: "C++",
     colorS: const Color(0xFF00599C),
+    assetPath: "assets/icons/Cpp.svg",
     hrefPath: "https://en.wikipedia.org/wiki/C%2B%2B",
   ),
   SkillsModel(
     skillName: "Dart",
     colorS: const Color(0xFF0175C2),
+    assetPath: "assets/icons/Dart-Light.svg",
     hrefPath: "https://dart.dev/",
   ),
   SkillsModel(
     skillName: "Python",
     colorS: const Color(0xFFFFD43B),
+    assetPath: "assets/icons/Python-light.svg",
     hrefPath: "https://www.python.org/",
   ),
   SkillsModel(
     skillName: "JavaScript",
     colorS: const Color(0xFF323330),
+    assetPath: "assets/icons/JavaScript.svg",
     hrefPath: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   ),
   SkillsModel(
-    skillName: "HTML5",
+    skillName: "HTML",
     colorS: const Color(0xFFE34F26),
+    assetPath: "assets/icons/HTML.svg",
     hrefPath: "https://developer.mozilla.org/en-US/docs/Web/HTML",
   ),
   SkillsModel(
-    skillName: "CSS3",
+    skillName: "CSS",
     colorS: const Color(0xFF1572B6),
+    assetPath: "assets/icons/CSS.svg",
     hrefPath: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   ),
   SkillsModel(
     skillName: "Flutter",
     colorS: const Color(0xFF02569B),
+    assetPath: "assets/icons/Flutter-Light.svg",
     hrefPath: "https://flutter.dev/",
   ),
   SkillsModel(
     skillName: "Firebase",
     colorS: const Color(0xFFffca28),
+    assetPath: "assets/icons/Firebase-Light.svg",
     hrefPath: "https://firebase.google.com/",
   ),
   SkillsModel(
     skillName: "Flask",
     colorS: const Color(0xFF000000),
+    assetPath: "assets/icons/Flask-Light.svg",
     hrefPath: "https://palletsprojects.com/p/jinja/",
   ),
   SkillsModel(
     skillName: "Jinja",
     colorS: const Color(0xFFB41717),
+    assetPath: "assets/icons/Jinja.svg",
     hrefPath: "https://jinja.palletsprojects.com/en/3.0.x/",
   ),
   SkillsModel(
     skillName: "Bootstrap",
     colorS: const Color(0xFF563D7C),
+    assetPath: "assets/icons/Bootstrap.svg",
     hrefPath: "https://getbootstrap.com/",
   ),
   SkillsModel(
     skillName: "Selenium",
     colorS: const Color(0xFF43B02A),
+    assetPath: "assets/icons/Selenium.svg",
     hrefPath: "https://www.selenium.dev/",
   ),
   SkillsModel(
     skillName: "Numpy",
     colorS: const Color(0xFF777BB4),
+    assetPath: "assets/icons/Numpy.svg",
     hrefPath: "https://numpy.org/",
   ),
   SkillsModel(
     skillName: "Pandas",
     colorS: const Color(0xFF2C2D72),
+    assetPath: "assets/icons/Pandas.svg",
     hrefPath: "https://pandas.pydata.org/",
   ),
   SkillsModel(
     skillName: "Plotly",
     colorS: const Color(0xFF239120),
+    assetPath: "assets/icons/Plotly.svg",
     hrefPath: "https://plotly.com/",
   ),
   SkillsModel(
     skillName: "SQLAlchemy",
     colorS: const Color(0xFFD71F00),
+    assetPath: "assets/icons/SQLAlchemy.svg",
     hrefPath: "https://www.sqlalchemy.org/",
   ),
   SkillsModel(
     skillName: "OpenCV",
     colorS: const Color(0xFF27338e),
+    assetPath: "assets/icons/OpenCV.svg",
     hrefPath: "https://opencv.org/",
   ),
   SkillsModel(
-    skillName: "Express.js",
+    skillName: "ExpressJS",
     colorS: const Color(0xFF000000),
+    assetPath: "assets/icons/ExpressJS-Light.svg",
     hrefPath: "https://expressjs.com/",
   ),
   SkillsModel(
     skillName: "Axios",
     colorS: const Color(0xFF671ddf),
+    assetPath: "assets/icons/Axios.svg",
     hrefPath: "https://axios-http.com/",
   ),
   SkillsModel(
-    skillName: "Node.js",
+    skillName: "NodeJS",
     colorS: const Color(0xFF339933),
+    assetPath: "assets/icons/NodeJS-Light.svg",
     hrefPath: "https://nodejs.org/",
   ),
   SkillsModel(
     skillName: "npm",
     colorS: const Color(0xFFCB3837),
+    assetPath: "assets/icons/npm.svg",
     hrefPath: "https://www.npmjs.com/",
   ),
   SkillsModel(
     skillName: "Postman",
     colorS: const Color(0xFFFF6C37),
+    assetPath: "assets/icons/Postman.svg",
     hrefPath: "https://www.postman.com/",
   ),
   SkillsModel(
     skillName: "React",
     colorS: const Color(0xFF20232A),
+    assetPath: "assets/icons/React-Light.svg",
     hrefPath: "https://reactjs.org/",
   ),
   SkillsModel(
     skillName: "SQLite",
     colorS: const Color(0xFF07405E),
+    assetPath: "assets/icons/SQLite.svg",
     hrefPath: "https://www.sqlite.org/",
   ),
   SkillsModel(
     skillName: "MongoDB",
     colorS: const Color(0xFF4EA94B),
+    assetPath: "assets/icons/MongoDB.svg",
     hrefPath: "https://www.mongodb.com/",
   ),
   SkillsModel(
     skillName: "MySQL",
     colorS: const Color(0xFF005C84),
+    assetPath: "assets/icons/MySQL-Light.svg",
     hrefPath: "https://www.mysql.com/",
   ),
   SkillsModel(
     skillName: "Render",
     colorS: const Color(0xFF46E3B7),
+    assetPath: "assets/icons/Render.svg",
     hrefPath: "https://render.com/",
   ),
   SkillsModel(
     skillName: "Heroku",
     colorS: const Color(0xFF430098),
+    assetPath: "assets/icons/Heroku.svg",
     hrefPath: "https://www.heroku.com/",
   ),
   SkillsModel(
     skillName: "Netlify",
     colorS: const Color(0xFF00C7B7),
+    assetPath: "assets/icons/Netlify-Light.svg",
     hrefPath: "https://www.netlify.com/",
   ),
   SkillsModel(
     skillName: "Arduino",
     colorS: const Color(0xFF00878F),
+    assetPath: "assets/icons/Arduino.svg",
     hrefPath: "https://www.arduino.cc/",
   ),
   SkillsModel(
     skillName: "Raspberry Pi",
     colorS: const Color(0xFFA22846),
+    assetPath: "assets/icons/RaspberryPi-Light.svg",
     hrefPath: "https://www.raspberrypi.org/",
   ),
 ];

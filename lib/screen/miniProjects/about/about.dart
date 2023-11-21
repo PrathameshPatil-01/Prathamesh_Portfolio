@@ -14,7 +14,6 @@ class _AboutMeState extends State<AboutMe> {
   double opacity = 0;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
