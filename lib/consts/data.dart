@@ -8,7 +8,6 @@ import 'package:pp_portfolio/screen/miniProjects/certifications/certifications.d
 import 'package:pp_portfolio/screen/miniProjects/education/education.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pp_portfolio/models/skill_model.dart';
 import 'package:pp_portfolio/screen/miniProjects/about/about.dart';
 import 'package:pp_portfolio/screen/miniProjects/projects/projects.dart';
@@ -424,19 +423,23 @@ final List<Educations> educations = [
 
 final List<Certifications> certifications = [
   Certifications(
-      color: Colors.amber,
-      title: "1. 100 Days of Code: The Complete Python Pro Bootcamp for 2021",
-      issuedBy: "UDEMY",
-      length: "64 Total Hours",
-      endDate: "Nov. 14  2021",
-      bulletPoints: [""]),
+    color: const Color.fromARGB(255, 255, 7, 7),
+    title: "1. 100 Days of Code: The Complete Python Pro Bootcamp for 2021",
+    issuedBy: "UDEMY",
+    length: "64 Total Hours",
+    endDate: "Nov. 14  2021",
+    link: Uri.parse(
+        'https://drive.google.com/file/d/1NC9b5kRGmgEUvDOhjXjCykcB3snRyGkZ/view?usp=sharing'),
+  ),
   Certifications(
-      color: Colors.amber,
-      title: "2. Flutter & Dart - The Complete Guide [2023 Edition]",
-      issuedBy: "UDEMY",
-      length: "30 Total Hours",
-      endDate: "Oct. 5  2023",
-      bulletPoints: [""])
+    color: const Color.fromARGB(255, 7, 255, 85),
+    title: "2. Flutter & Dart - The Complete Guide [2023 Edition]",
+    issuedBy: "UDEMY",
+    length: "30 Total Hours",
+    endDate: "Oct. 5  2023",
+    link: Uri.parse(
+        "https://drive.google.com/file/d/16KGkkVsa5bRPpo6vaR8Gqb2_mlqxDs8m/view"),
+  ),
 ];
 
 final List<Projects> projects = [
@@ -447,38 +450,43 @@ final List<Projects> projects = [
       endDate: "",
       bulletPoints: [
         "Description: Developed a dynamic chat app providing real-time communication. I’ve tried to implement max features from WhatsApp.",
-        " GitHub Repository: https://github.com/PrathameshPatil-01/CHAT_APP-FLUTTER.git"
-      ]),
+      ],
+      link: Uri.parse(
+          "https://github.com/PrathameshPatil-01/CHAT_APP-FLUTTER.git")),
   Projects(
-      color: Colors.amber,
+      color: Colors.red,
       title: "2. Flutter Expense Tracker App ",
       startDate: "",
       endDate: "",
       bulletPoints: [
         "Description: Track expenses with their category and date of expense. Visualize your spending habits with an intuitive bar chart.",
-        "GitHub Repository: https://github.com/PrathameshPatil-01/EXPENSE_TRACKER-FLUTTER.git "
-      ]),
+      ],
+      link: Uri.parse(
+          "https://github.com/PrathameshPatil-01/EXPENSE_TRACKER-FLUTTER.git")),
   Projects(
-      color: Colors.amber,
+      color: Colors.green,
       title: "3. Flutter Quiz App ",
       startDate: "",
       endDate: "",
       bulletPoints: [
         "Description: The Quiz App features a series of questions and instant feedback on correct answers upon completion.",
-        "GitHub Repository: https://github.com/PrathameshPatil-01/FLUTTER_AND_DART_QUIZ_APP.git"
-      ]),
+      ],
+      link: Uri.parse(
+          "https://github.com/PrathameshPatil-01/FLUTTER_AND_DART_QUIZ_APP.git")),
   Projects(
-      color: Colors.amber,
-      title: "4. E-Shopee (e-Commerce Website)",
-      startDate: "",
-      endDate: "",
-      bulletPoints: [
-        "Description: A simple e-commerce website with complete user authentication & authorization, responsiveness & more fundamentals. ",
-        "GitHub Repository: https://github.com/PrathameshPatil-01/E-SHOPEE_PYTHON.git",
-        "Website Link: https://e-shopee-python-prathamesh.onrender.com "
-      ]),
+    color: Colors.pink,
+    title: "4. E-Shopee (e-Commerce Website)",
+    startDate: "",
+    endDate: "",
+    bulletPoints: [
+      "Description: A simple e-commerce website with complete user authentication & authorization, responsiveness & more fundamentals. ",
+    ],
+    link:
+        Uri.parse("https://github.com/PrathameshPatil-01/E-SHOPEE_PYTHON.git"),
+    webLink: Uri.parse("https://e-shopee-python-prathamesh.onrender.com"),
+  ),
   Projects(
-      color: Colors.amber,
+      color: Colors.yellow,
       title: "5. IOT-Based Smart Attendance System (Fourth Year Project) ",
       startDate: "",
       endDate: "",
@@ -487,10 +495,11 @@ final List<Projects> projects = [
         "Technologies Used: HTML, CSS, Bootstrap, Python ",
         "Hardware requirements: RFID Reader, Pi Camera, Raspberry Pi, LCD 16x2, Connecting Wires ",
         "Software requirements: Raspbian for Raspberry Pi, Python, SQLite Database ",
-        "GitHub Repository: https://github.com/PrathameshPatil-01/B.E.PROJECT-ENTC.git "
-      ]),
+      ],
+      link: Uri.parse(
+          "https://github.com/PrathameshPatil-01/B.E.PROJECT-ENTC.git")),
   Projects(
-      color: Colors.amber,
+      color: Colors.green,
       title: "6. Elevator Cabin Light Automation (Third Year Project)",
       startDate: "",
       endDate: "",
