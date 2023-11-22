@@ -7,7 +7,7 @@ class Certifications {
   final String endDate;
   final List<String>? bulletPoints;
   final Color color;
-  final Uri? link;
+  final String? link;
   Certifications({
     required this.color,
     required this.title,

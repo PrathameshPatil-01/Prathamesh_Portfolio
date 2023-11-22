@@ -35,7 +35,7 @@ class CurrentState extends ChangeNotifier {
     if (await canLaunchUrl(url)) {
       await launchUrl(url, mode: LaunchMode.externalApplication);
     } else {
-      print('Could not launch $url');
+      throw ('Could not launch $url');
     }
   }
 

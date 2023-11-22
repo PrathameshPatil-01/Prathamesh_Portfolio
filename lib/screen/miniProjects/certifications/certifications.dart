@@ -3,13 +3,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pp_portfolio/consts/data.dart';
 import 'package:pp_portfolio/models/certifications_model.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:pp_portfolio/providers/current_state.dart';
+import 'package:provider/provider.dart';
 
 class Certification extends StatelessWidget {
   const Certification({super.key});
 
   @override
   Widget build(BuildContext context) {
+    CurrentState currentState =
+        Provider.of<CurrentState>(context, listen: false);
     return Scaffold(
       body: ListView(
         children: [
@@ -71,7 +74,8 @@ class Certification extends StatelessWidget {
                             Flexible(
                               child: GestureDetector(
                                 onTap: () {
-                                  launchUrl(certificate.link!);
+                                  currentState
+                                      .launchInBrowser(certificate.link!);
                                 },
                                 child: const Text(
                                   "Certificate Link",

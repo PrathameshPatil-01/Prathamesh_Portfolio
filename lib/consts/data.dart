@@ -423,23 +423,21 @@ final List<Educations> educations = [
 
 final List<Certifications> certifications = [
   Certifications(
-    color: const Color.fromARGB(255, 255, 7, 7),
-    title: "1. 100 Days of Code: The Complete Python Pro Bootcamp for 2021",
-    issuedBy: "UDEMY",
-    length: "64 Total Hours",
-    endDate: "Nov. 14  2021",
-    link: Uri.parse(
-        'https://drive.google.com/file/d/1NC9b5kRGmgEUvDOhjXjCykcB3snRyGkZ/view?usp=sharing'),
-  ),
+      color: const Color.fromARGB(255, 255, 7, 7),
+      title: "1. 100 Days of Code: The Complete Python Pro Bootcamp for 2021",
+      issuedBy: "UDEMY",
+      length: "64 Total Hours",
+      endDate: "Nov. 14  2021",
+      link:
+          'https://drive.google.com/file/d/1NC9b5kRGmgEUvDOhjXjCykcB3snRyGkZ/view?usp=sharing'),
   Certifications(
-    color: const Color.fromARGB(255, 7, 255, 85),
-    title: "2. Flutter & Dart - The Complete Guide [2023 Edition]",
-    issuedBy: "UDEMY",
-    length: "30 Total Hours",
-    endDate: "Oct. 5  2023",
-    link: Uri.parse(
-        "https://drive.google.com/file/d/16KGkkVsa5bRPpo6vaR8Gqb2_mlqxDs8m/view"),
-  ),
+      color: const Color.fromARGB(255, 7, 255, 85),
+      title: "2. Flutter & Dart - The Complete Guide [2023 Edition]",
+      issuedBy: "UDEMY",
+      length: "30 Total Hours",
+      endDate: "Oct. 5  2023",
+      link:
+          "https://drive.google.com/file/d/16KGkkVsa5bRPpo6vaR8Gqb2_mlqxDs8m/view"),
 ];
 
 final List<Projects> projects = [
@@ -451,8 +449,7 @@ final List<Projects> projects = [
       bulletPoints: [
         "Description: Developed a dynamic chat app providing real-time communication. I’ve tried to implement max features from WhatsApp.",
       ],
-      link: Uri.parse(
-          "https://github.com/PrathameshPatil-01/CHAT_APP-FLUTTER.git")),
+      link: "https://github.com/PrathameshPatil-01/CHAT_APP-FLUTTER.git"),
   Projects(
       color: Colors.red,
       title: "2. Flutter Expense Tracker App ",
@@ -461,8 +458,8 @@ final List<Projects> projects = [
       bulletPoints: [
         "Description: Track expenses with their category and date of expense. Visualize your spending habits with an intuitive bar chart.",
       ],
-      link: Uri.parse(
-          "https://github.com/PrathameshPatil-01/EXPENSE_TRACKER-FLUTTER.git")),
+      link:
+          "https://github.com/PrathameshPatil-01/EXPENSE_TRACKER-FLUTTER.git"),
   Projects(
       color: Colors.green,
       title: "3. Flutter Quiz App ",
@@ -471,8 +468,8 @@ final List<Projects> projects = [
       bulletPoints: [
         "Description: The Quiz App features a series of questions and instant feedback on correct answers upon completion.",
       ],
-      link: Uri.parse(
-          "https://github.com/PrathameshPatil-01/FLUTTER_AND_DART_QUIZ_APP.git")),
+      link:
+          "https://github.com/PrathameshPatil-01/FLUTTER_AND_DART_QUIZ_APP.git"),
   Projects(
     color: Colors.pink,
     title: "4. E-Shopee (e-Commerce Website)",
@@ -481,9 +478,8 @@ final List<Projects> projects = [
     bulletPoints: [
       "Description: A simple e-commerce website with complete user authentication & authorization, responsiveness & more fundamentals. ",
     ],
-    link:
-        Uri.parse("https://github.com/PrathameshPatil-01/E-SHOPEE_PYTHON.git"),
-    webLink: Uri.parse("https://e-shopee-python-prathamesh.onrender.com"),
+    link: "https://github.com/PrathameshPatil-01/E-SHOPEE_PYTHON.git",
+    webLink: "https://e-shopee-python-prathamesh.onrender.com",
   ),
   Projects(
       color: Colors.yellow,
@@ -496,8 +492,7 @@ final List<Projects> projects = [
         "Hardware requirements: RFID Reader, Pi Camera, Raspberry Pi, LCD 16x2, Connecting Wires ",
         "Software requirements: Raspbian for Raspberry Pi, Python, SQLite Database ",
       ],
-      link: Uri.parse(
-          "https://github.com/PrathameshPatil-01/B.E.PROJECT-ENTC.git")),
+      link: "https://github.com/PrathameshPatil-01/B.E.PROJECT-ENTC.git"),
   Projects(
       color: Colors.green,
       title: "6. Elevator Cabin Light Automation (Third Year Project)",

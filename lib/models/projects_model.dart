@@ -6,8 +6,8 @@ class Projects {
   final String endDate;
   final List<String> bulletPoints;
   final Color color;
-  final Uri? link;
-  final Uri? webLink;
+  final String? link;
+  final String? webLink;
   Projects({
     required this.color,
     required this.title,

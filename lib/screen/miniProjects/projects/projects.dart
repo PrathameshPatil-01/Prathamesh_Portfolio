@@ -3,13 +3,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pp_portfolio/consts/data.dart';
 import 'package:pp_portfolio/models/projects_model.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:pp_portfolio/providers/current_state.dart';
+import 'package:provider/provider.dart';
 
 class Project extends StatelessWidget {
   const Project({super.key});
 
   @override
   Widget build(BuildContext context) {
+    CurrentState currentState =
+        Provider.of<CurrentState>(context, listen: false);
     return Scaffold(
       body: ListView(
         children: [
@@ -102,7 +105,7 @@ class Project extends StatelessWidget {
                               Flexible(
                                 child: GestureDetector(
                                   onTap: () {
-                                    launchUrl(project.link!);
+                                    currentState.launchInBrowser(project.link!);
                                   },
                                   child: const Text(
                                     "GitHub Repository Link ",
@@ -141,7 +144,8 @@ class Project extends StatelessWidget {
                               Flexible(
                                 child: GestureDetector(
                                   onTap: () {
-                                    launchUrl(project.webLink!);
+                                    currentState
+                                        .launchInBrowser(project.webLink!);
                                   },
                                   child: const Text(
                                     "Website Link ",
