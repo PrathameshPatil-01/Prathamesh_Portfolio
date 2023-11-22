@@ -42,7 +42,7 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     CurrentState currentState =
-        Provider.of<CurrentState>(context, listen: false);
+        Provider.of<CurrentState>(context, listen: true);
     return Container(
       height: size.height,
       padding: const EdgeInsets.only(top: 70, left: 20, right: 20),
@@ -175,7 +175,7 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                                 style: GoogleFonts.openSans(
                                     fontSize: currentState.currentDevice ==
                                             Devices.ios.iPad
-                                        ? 17
+                                        ? 18
                                         : 13,
                                     color: Colors.white,
                                     fontWeight: FontWeight.w400),
@@ -265,7 +265,7 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                                 style: GoogleFonts.openSans(
                                     fontSize: currentState.currentDevice ==
                                             Devices.ios.iPad
-                                        ? 17
+                                        ? 18
                                         : 13,
                                     color: Colors.white,
                                     fontWeight: FontWeight.w400),

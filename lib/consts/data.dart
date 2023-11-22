@@ -471,7 +471,7 @@ final List<Projects> projects = [
       link:
           "https://github.com/PrathameshPatil-01/FLUTTER_AND_DART_QUIZ_APP.git"),
   Projects(
-    color: Colors.pink,
+    color: Colors.purple,
     title: "4. E-Shopee (e-Commerce Website)",
     startDate: "",
     endDate: "",
@@ -487,14 +487,14 @@ final List<Projects> projects = [
       startDate: "",
       endDate: "",
       bulletPoints: [
-        " Description: This system combines RFID and Face Recognition for secure, contactless attendance with simple web interface. ",
+        "Description: This system combines RFID and Face Recognition for secure, contactless attendance with simple web interface. ",
         "Technologies Used: HTML, CSS, Bootstrap, Python ",
         "Hardware requirements: RFID Reader, Pi Camera, Raspberry Pi, LCD 16x2, Connecting Wires ",
         "Software requirements: Raspbian for Raspberry Pi, Python, SQLite Database ",
       ],
       link: "https://github.com/PrathameshPatil-01/B.E.PROJECT-ENTC.git"),
   Projects(
-      color: Colors.green,
+      color: Colors.blue,
       title: "6. Elevator Cabin Light Automation (Third Year Project)",
       startDate: "",
       endDate: "",

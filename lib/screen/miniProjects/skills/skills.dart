@@ -12,7 +12,7 @@ class Skills extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CurrentState currentState =
-        Provider.of<CurrentState>(context, listen: false);
+        Provider.of<CurrentState>(context, listen: true);
     return Scaffold(
       body: SingleChildScrollView(
         child: Center(

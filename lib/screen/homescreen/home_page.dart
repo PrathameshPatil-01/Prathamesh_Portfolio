@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     ThemeProvider theme = Provider.of<ThemeProvider>(context, listen: false);
     CurrentState currentState =
-        Provider.of<CurrentState>(context, listen: false);
+        Provider.of<CurrentState>(context, listen: true);
     Size size = MediaQuery.of(context).size;
     theme.size = MediaQuery.of(context).size;
     theme.widthRatio = theme.size.width / baseWidth;
