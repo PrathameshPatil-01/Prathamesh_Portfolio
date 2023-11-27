@@ -1,29 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pp_portfolio/providers/current_state.dart';
+import 'package:provider/provider.dart';
+import 'package:device_frame/device_frame.dart';
 
 class ContactMe extends StatelessWidget {
   const ContactMe({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 70,
+    CurrentState currentState =
+        Provider.of<CurrentState>(context, listen: true);
+    return SelectionArea(
+      child: Scaffold(
+        body: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 5),
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        decoration: BoxDecoration(
+              color: const Color.fromARGB(60, 116, 232, 255),
+              borderRadius: BorderRadius.circular(15),
             ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
-              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 201, 254, 246),
-                  borderRadius: BorderRadius.circular(15),
+          child: Center(
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 100,
                 ),
-                padding: const EdgeInsets.symmetric(vertical: 70),
-                child: Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const SizedBox(
@@ -32,60 +37,45 @@ class ContactMe extends StatelessWidget {
                     Center(
                       child: SvgPicture.asset(
                         "assets/icons/Connect.svg",
-                        width: 200,
-                        height: 200,
+                        width: 180,
+                        height: 180,
                       ),
                     ),
                     const SizedBox(
-                      height: 50,
+                      height: 150,
                     ),
                     Container(
                       alignment: Alignment.center,
-                      width: 300,
-                      height: 200,
-                      decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        gradient: LinearGradient(
-                            colors: [
-                              Color.fromARGB(255, 234, 226, 226),
-                              Color.fromARGB(226, 201, 186, 186)
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromARGB(255, 73, 64, 64),
-                            offset: Offset(10, 20),
-                            blurRadius: 30,
-                          )
-                        ],
-                      ),
                       padding: const EdgeInsets.all(15),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            "Mobile No. :  7218672175",
+                            "📞  72186 72175",
                             style: GoogleFonts.inter(
-                                fontWeight: FontWeight.bold, fontSize: 15),
+                                fontWeight: FontWeight.bold, fontSize: currentState.currentDevice == Devices.ios.iPad
+                        ? 28
+                        : 18,),
                           ),
                           const SizedBox(
-                            height: 30,
+                            height: 40,
                           ),
                           Text(
-                            "Email: prathameshp800@gmail.com",
+                            "📧  prathameshp800@gmail.com",
                             style: GoogleFonts.inter(
-                                fontWeight: FontWeight.bold, fontSize: 15),
+                                fontWeight: FontWeight.bold, fontSize: currentState.currentDevice == Devices.ios.iPad
+                        ? 28
+                        : 17,),
                           )
                         ],
                       ),
                     ),
                   ],
                 ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

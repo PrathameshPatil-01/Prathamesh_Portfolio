@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:custom_button_builder/custom_button_builder.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +7,7 @@ import 'package:intl/intl.dart';
 import 'package:pp_portfolio/consts/data.dart';
 import 'package:pp_portfolio/providers/current_state.dart';
 import 'package:provider/provider.dart';
+import 'package:analog_clock/analog_clock.dart';
 
 class PhoneHomeScreen extends StatefulWidget {
   const PhoneHomeScreen({super.key});
@@ -45,61 +45,68 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
         Provider.of<CurrentState>(context, listen: true);
     return Container(
       height: size.height,
-      padding: const EdgeInsets.only(top: 70, left: 20, right: 20),
+      padding: const EdgeInsets.only(top: 45, left: 20, right: 20),
       child: Column(
         children: [
           Container(
-            width: 300,
-            height: 170,
-            decoration: BoxDecoration(
-              border: Border.all(color: currentState.bgGradient.colors[1]),
-              borderRadius: BorderRadius.circular(20),
-              color: currentState.bgGradient.colors[0],
-              gradient: const LinearGradient(colors: [
-                Color.fromARGB(255, 255, 255, 255),
-                Color.fromARGB(200, 255, 255, 255),
-              ], begin: Alignment.topLeft, end: Alignment.bottomRight),
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black,
-                  offset: Offset(5, 10),
-                  blurRadius: 20,
-                )
-              ],
-            ),
+            width: currentState.currentDevice == Devices.ios.iPad ? 270 : 220,
+            height: currentState.currentDevice == Devices.ios.iPad ? 270 : 220,
             padding: const EdgeInsets.all(10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  currentTime,
-                  style: TextStyle(
-                    color: currentState.bgGradient.colors[1],
-                    fontSize: 48.0,
-                    fontWeight: FontWeight.bold,
-                  ),
+                AnalogClock(
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 3.0, color: Colors.black),
+                      color: Colors.grey[200],
+                      shape: BoxShape.circle),
+                  width: currentState.currentDevice == Devices.ios.iPad
+                      ? 190
+                      : 140,
+                  height: currentState.currentDevice == Devices.ios.iPad
+                      ? 190
+                      : 140,
+                  isLive: true,
+                  hourHandColor: Colors.black,
+                  minuteHandColor: Colors.black,
+                  showSecondHand: true,
+                  secondHandColor: currentState.bgGradient.colors[0],
+                  numberColor: currentState.bgGradient.colors[1],
+                  showNumbers: true,
+                  showAllNumbers: false,
+                  textScaleFactor: 2,
+                  showTicks: true,
+                  showDigitalClock: false,
+                  datetime: DateTime.now(),
+                  tickColor:currentState.bgGradient.colors[1] ,
                 ),
-                const SizedBox(height: 16.0),
-                Text(
-                  currentDay,
-                  style: TextStyle(
-                    color: currentState.bgGradient.colors[1],
-                    fontSize: 24.0,
-                  ),
+                const SizedBox(
+                  height: 10,
                 ),
-                Text(
-                  currentDate,
-                  style: TextStyle(
-                    color: currentState.bgGradient.colors[1],
-                    fontSize: 24.0,
-                  ),
-                ),
+                // Text(
+                //   currentDay,
+                //   style: TextStyle(
+                //     color: Colors.white,
+                //     fontSize: currentState.currentDevice == Devices.ios.iPad
+                //         ? 24
+                //         : 16,
+                //   ),
+                // ),
+                // Text(
+                //   currentDate,
+                //   style: TextStyle(
+                //     color: Colors.white,
+                //     fontSize: currentState.currentDevice == Devices.ios.iPad
+                //         ? 24
+                //         : 16,
+                //   ),
+                // ),
               ],
             ),
           ),
           const SizedBox(
-            height: 45,
+            height: 10,
           ),
           Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
@@ -117,8 +124,6 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                         children: [
                           CustomButton(
                             margin: const EdgeInsets.only(bottom: 5),
-                            isThreeD: true,
-                            shadowColor: Colors.black,
                             backgroundColor: Colors.white,
                             borderRadius: currentState.currentDevice ==
                                     Devices.android.onePlus8Pro
@@ -188,8 +193,8 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
           ),
           SizedBox(
             height: currentState.currentDevice != Devices.ios.iPad
-                ? size.height * 0.15
-                : size.height * 0.35,
+                ? size.height * 0.17
+                : size.height * 0.32,
           ),
           Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
@@ -207,8 +212,6 @@ class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
                         children: [
                           CustomButton(
                             margin: const EdgeInsets.only(bottom: 5),
-                            isThreeD: true,
-                            shadowColor: Colors.black,
                             backgroundColor: Colors.white,
                             borderRadius: currentState.currentDevice ==
                                     Devices.android.onePlus8Pro

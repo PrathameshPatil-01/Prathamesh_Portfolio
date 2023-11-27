@@ -1,8 +1,12 @@
+import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pp_portfolio/consts/data.dart';
+import 'package:pp_portfolio/providers/current_state.dart';
+import 'package:provider/provider.dart';
 
 class AboutMe extends StatefulWidget {
   const AboutMe({super.key});
@@ -20,6 +24,8 @@ class _AboutMeState extends State<AboutMe> {
 
   @override
   Widget build(BuildContext context) {
+    CurrentState currentState =
+        Provider.of<CurrentState>(context, listen: true);
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -28,7 +34,7 @@ class _AboutMeState extends State<AboutMe> {
           margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: Container(
             decoration: BoxDecoration(
-              color: const Color(0xfff5f4e7),
+              color: const Color.fromARGB(33, 255, 172, 64),
               borderRadius: BorderRadius.circular(15),
             ),
             padding: const EdgeInsets.all(10),
@@ -52,13 +58,19 @@ class _AboutMeState extends State<AboutMe> {
                   child: Text(
                     "Hi, I am Prathamesh Patil",
                     style: GoogleFonts.openSans(
-                        fontSize: 20, fontWeight: FontWeight.bold),
+                        fontSize: currentState.currentDevice == Devices.ios.iPad
+                            ? 30
+                            : 20,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
                 Text(
                   introduction,
                   style: GoogleFonts.openSans(
-                      fontSize: 15, fontWeight: FontWeight.w500),
+                      fontSize: currentState.currentDevice == Devices.ios.iPad
+                          ? 25
+                          : 18,
+                      fontWeight: FontWeight.w500),
                 ).animate().fadeIn(duration: const Duration(milliseconds: 500))
               ],
             ),

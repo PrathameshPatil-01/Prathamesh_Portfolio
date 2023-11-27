@@ -1,10 +1,10 @@
+import 'package:custom_button_builder/custom_button_builder.dart';
+import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pp_portfolio/consts/data.dart';
 import 'package:pp_portfolio/providers/current_state.dart';
 import 'package:provider/provider.dart';
-import 'package:custom_button_builder/custom_button_builder.dart';
-import 'package:device_frame/device_frame.dart';
 
 class Skills extends StatelessWidget {
   const Skills({super.key});
@@ -17,7 +17,12 @@ class Skills extends StatelessWidget {
       body: SingleChildScrollView(
         child: Center(
           child: Container(
-            padding: const EdgeInsets.all(15),
+            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(33, 255, 172, 64),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            padding: const EdgeInsets.all(5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -42,7 +47,7 @@ class Skills extends StatelessWidget {
                                 CustomButton(
                                   margin: const EdgeInsets.only(bottom: 5),
                                   isThreeD: true,
-                                  shadowColor: Colors.black,
+                                  shadowColor: skills[index].colorS,
                                   backgroundColor: Colors.white,
                                   borderRadius: currentState.currentDevice ==
                                           Devices.android.onePlus8Pro
@@ -112,15 +117,7 @@ class Skills extends StatelessWidget {
                   color: Colors.red,
                 ),
                 const SizedBox(
-                  height: 7,
-                ),
-                Text(
-                  "Languages",
-                  style: GoogleFonts.inter(
-                      fontWeight: FontWeight.bold, fontSize: 25),
-                ),
-                const SizedBox(
-                  height: 15,
+                  height: 10,
                 ),
                 Wrap(
                   crossAxisAlignment: WrapCrossAlignment.center,
@@ -143,7 +140,7 @@ class Skills extends StatelessWidget {
                                 CustomButton(
                                   margin: const EdgeInsets.only(bottom: 5),
                                   isThreeD: true,
-                                  shadowColor: Colors.black,
+                                  shadowColor: languages[index].colorS,
                                   backgroundColor: Colors.white,
                                   borderRadius: currentState.currentDevice ==
                                           Devices.android.onePlus8Pro

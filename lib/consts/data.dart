@@ -77,8 +77,7 @@ List<ColorModel> colorPalette = [
       end: Alignment(-0.20, 0.95),
       colors: [
         Color.fromARGB(255, 37, 33, 243),
-        Color.fromARGB(220, 1, 0, 11),
-        Color.fromARGB(54, 1, 0, 11)
+        Color.fromARGB(150, 1, 0, 11)
       ],
     ),
   ),
@@ -444,8 +443,8 @@ final List<Projects> projects = [
   Projects(
       color: Colors.amber,
       title: "1. Flutter Chat App ",
-      startDate: "",
-      endDate: "",
+      startDate: 'Sept 2023',
+    endDate: 'Oct 2023',
       bulletPoints: [
         "Description: Developed a dynamic chat app providing real-time communication. I’ve tried to implement max features from WhatsApp.",
       ],
@@ -453,8 +452,8 @@ final List<Projects> projects = [
   Projects(
       color: Colors.red,
       title: "2. Flutter Expense Tracker App ",
-      startDate: "",
-      endDate: "",
+      startDate: 'Sept 2023',
+    endDate: 'Oct 2023',
       bulletPoints: [
         "Description: Track expenses with their category and date of expense. Visualize your spending habits with an intuitive bar chart.",
       ],
@@ -463,8 +462,8 @@ final List<Projects> projects = [
   Projects(
       color: Colors.green,
       title: "3. Flutter Quiz App ",
-      startDate: "",
-      endDate: "",
+      startDate: 'Sept 2023',
+    endDate: 'Sept 2023',
       bulletPoints: [
         "Description: The Quiz App features a series of questions and instant feedback on correct answers upon completion.",
       ],
@@ -473,8 +472,8 @@ final List<Projects> projects = [
   Projects(
     color: Colors.purple,
     title: "4. E-Shopee (e-Commerce Website)",
-    startDate: "",
-    endDate: "",
+    startDate: 'Dec 2021',
+    endDate: 'Jan 2022',
     bulletPoints: [
       "Description: A simple e-commerce website with complete user authentication & authorization, responsiveness & more fundamentals. ",
     ],
@@ -484,8 +483,8 @@ final List<Projects> projects = [
   Projects(
       color: Colors.yellow,
       title: "5. IOT-Based Smart Attendance System (Fourth Year Project) ",
-      startDate: "",
-      endDate: "",
+      startDate: "Aug 2022",
+      endDate: "Jun 2023",
       bulletPoints: [
         "Description: This system combines RFID and Face Recognition for secure, contactless attendance with simple web interface. ",
         "Technologies Used: HTML, CSS, Bootstrap, Python ",
@@ -496,8 +495,8 @@ final List<Projects> projects = [
   Projects(
       color: Colors.blue,
       title: "6. Elevator Cabin Light Automation (Third Year Project)",
-      startDate: "",
-      endDate: "",
+      startDate: "Aug 2021",
+      endDate: "May 2022",
       bulletPoints: [
         "Description: The system made with minimum cost possible to automate the cabin lights to save energy.",
         "Hardware requirements: IR Sensors, Arduino Uno, LCD 16x2, Connecting Wires, LED Lights, Power Supply Unit ",

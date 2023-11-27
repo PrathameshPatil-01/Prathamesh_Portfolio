@@ -18,8 +18,9 @@ class Portfolio extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => ThemeProvider()),
         ChangeNotifierProvider(create: (context) => CurrentState()),
       ],
-      child: const MaterialApp(
-        home: HomePage(),
+      child: MaterialApp(
+        home: const HomePage(),
+        theme: ThemeData(useMaterial3: true),
       ),
     );
   }

@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     ThemeProvider theme = Provider.of<ThemeProvider>(context, listen: false);
     CurrentState currentState =
-        Provider.of<CurrentState>(context, listen: true);
+        Provider.of<CurrentState>(context, listen: false);
     Size size = MediaQuery.of(context).size;
     theme.size = MediaQuery.of(context).size;
     theme.widthRatio = theme.size.width / baseWidth;
@@ -172,8 +172,8 @@ class HomePage extends StatelessWidget {
                             )
                           : Container(),
                       SizedBox(
-                        height: size.height * 0.8,
-                        width: phone ? null : size.width * 0.3,
+                        height: phone ? size.height * 0.8 :size.height * 0.9,
+                        width: phone ? size.width * 0.8 : size.width * 0.35,
                         child: Consumer<CurrentState>(
                           // selector: (context, provider) => provider.currentDevice,
                           builder: (context, _, __) {
@@ -270,8 +270,8 @@ class HomePage extends StatelessWidget {
                                 borderRadius: 100,
                                 isThreeD: true,
                                 backgroundColor: Colors.black,
-                                width: 37.5,
-                                height: 37.5,
+                                width: 32.5,
+                                height: 32.5,
                                 onPressed: () {
                                   currentState.changeSelectedDevice(
                                     devices[index].device,
@@ -281,7 +281,7 @@ class HomePage extends StatelessWidget {
                                   child: Icon(
                                     devices[index].icon,
                                     color: Colors.white,
-                                    size: 25,
+                                    size: 22,
                                   ),
                                 ),
                               );
@@ -305,8 +305,8 @@ class HomePage extends StatelessWidget {
                                 borderRadius: 100,
                                 isThreeD: true,
                                 backgroundColor: Colors.black,
-                                width: 37.5,
-                                height: 37.5,
+                                width: 32.5,
+                                height: 32.5,
                                 onPressed: () {
                                   currentState.changeSelectedDevice(
                                     devices[index].device,
@@ -316,7 +316,7 @@ class HomePage extends StatelessWidget {
                                   child: Icon(
                                     devices[index].icon,
                                     color: Colors.white,
-                                    size: 25,
+                                    size: 22,
                                   ),
                                 ),
                               );
