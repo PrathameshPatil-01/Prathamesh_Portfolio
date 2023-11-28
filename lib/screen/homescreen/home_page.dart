@@ -3,7 +3,6 @@ import 'package:custom_button_builder/custom_button_builder.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pp_portfolio/consts/data.dart';
 import 'package:pp_portfolio/providers/current_state.dart';
@@ -11,7 +10,7 @@ import 'package:pp_portfolio/providers/theme_provider.dart';
 import 'package:pp_portfolio/widgets/frosted_container.dart';
 import 'package:pp_portfolio/widgets/rain_cloud.dart';
 import 'package:provider/provider.dart';
-
+import 'package:intl/intl.dart';
 import 'phone_screen_wrapper.dart';
 
 class HomePage extends StatelessWidget {
@@ -27,7 +26,7 @@ class HomePage extends StatelessWidget {
     theme.widthRatio = theme.size.width / baseWidth;
     theme.heightRatio = theme.size.height / baseHeight;
     bool phone = false;
-    if (size.width < 900) {
+    if (size.width < 1100) {
       phone = true;
       currentState.changeSelectedDevice(
         devices[1].device,
@@ -45,23 +44,22 @@ class HomePage extends StatelessWidget {
               );
             },
           ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Image.asset(
+              'assets/images/ppp.png',
+              width: size.width,
+              fit: BoxFit.contain,
+            ),
+          ),
           size.height > 600
               ? const Rain(
                   oposite: false,
                   top: 150,
                 )
               : Container(),
-          Selector<CurrentState, String>(
-            selector: (context, provider) => provider.selectedCloud,
-            builder: (context, _, __) {
-              return SvgPicture.asset(
-                currentState.selectedCloud,
-                // width: double.infinity,
-                height: size.height,
-                fit: BoxFit.cover,
-              );
-            },
-          ),
           size.height > 600
               ? const Rain(
                   oposite: true,
@@ -83,57 +81,153 @@ class HomePage extends StatelessWidget {
                       : Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Transform(
-                              transform: Matrix4.identity()
-                                ..setEntry(3, 2, 0.01)
-                                ..rotateY(-0.06),
-                              alignment: Alignment.bottomCenter,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                margin: EdgeInsets.only(
-                                    top: 0, bottom: 10 * theme.heightRatio),
-                                child: FrostedWidget(
-                                  childW: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Transform(
-                                      transform: Matrix4.identity()
-                                        ..setEntry(3, 2, 0.01)
-                                        ..rotateY(-0.06),
-                                      alignment: FractionalOffset.center,
-                                      child: Row(
-                                        children: [
-                                          Flexible(
-                                            child: Center(
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(10),
-                                                child: AutoSizeText(
-                                                  ' Prathamesh ',
-                                                  style: GoogleFonts.exo(
-                                                      fontSize: 25,
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                  maxFontSize: 25,
-                                                  minFontSize: 10,
-                                                  maxLines: 1,
-                                                ).animate().fadeIn(
-                                                    delay: .8.seconds,
-                                                    duration: .7.seconds),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              margin: EdgeInsets.only(
+                                  top: 0,
+                                  bottom: 10 * theme.heightRatio,
+                                  right: 20),
+                              child: FrostedWidget(
+                                childW: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
                                   ),
-                                  height: 395 * theme.heightRatio,
-                                  width: 247.5 * theme.widthRatio,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Center(
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 20),
+                                          child: AutoSizeText.rich(
+                                            TextSpan(
+                                              children: [
+                                                TextSpan(
+                                                  text: 'Prathamesh\n',
+                                                  style: GoogleFonts.exo(
+                                                    fontSize: 25,
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                                TextSpan(
+                                                  text: 'Patil',
+                                                  style: GoogleFonts.exo(
+                                                    fontSize: 25,
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            maxFontSize: 25,
+                                            minFontSize: 10,
+                                            maxLines: 2,
+                                          ).animate().fadeIn(
+                                              delay: .8.seconds,
+                                              duration: .7.seconds),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
+                                height: 175 * theme.heightRatio,
+                                width: 250 * theme.widthRatio,
+                              ),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              margin: EdgeInsets.only(
+                                  top: 0,
+                                  bottom: 10 * theme.heightRatio,
+                                  right: 20),
+                              child: FrostedWidget(
+                                childW: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 15),
+                                        child: AutoSizeText(
+                                          'I am eager to leverage my development skills to create intuitive and innovative applications. Committed to continuous learning and building impactful solutions.',
+                                          style: GoogleFonts.inter(
+                                            fontSize: 14,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          maxFontSize: 14,
+                                          minFontSize: 10,
+                                          maxLines: 8,
+                                        ).animate().fadeIn(
+                                            delay: 1.seconds,
+                                            duration: .7.seconds),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                height: 300 * theme.heightRatio,
+                                width: 250 * theme.widthRatio,
+                              ),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              margin: EdgeInsets.only(
+                                  top: 0,
+                                  bottom: 10 * theme.heightRatio,
+                                  right: 20),
+                              child: FrostedWidget(
+                                childW: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Center(
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 20),
+                                          child: AutoSizeText(
+                                            "Powered by Flutter with passion ❤️",
+                                            style: GoogleFonts.exo(
+                                              fontSize: 20,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            maxFontSize: 14,
+                                            minFontSize: 10,
+                                            maxLines: 2,
+                                          ).animate().fadeIn(
+                                              delay: .8.seconds,
+                                              duration: .7.seconds),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                height: 120 *
+                                    theme
+                                        .heightRatio, // Adjust the height as needed
+                                width: 250 * theme.widthRatio,
                               ),
                             ),
                           ],
@@ -172,8 +266,8 @@ class HomePage extends StatelessWidget {
                             )
                           : Container(),
                       SizedBox(
-                        height: phone ? size.height * 0.8 :size.height * 0.9,
-                        width: phone ? size.width * 0.8 : size.width * 0.35,
+                        height: phone ? size.height * 0.8 : size.height * 0.9,
+                        width: phone ? size.width * 0.8 : null,
                         child: Consumer<CurrentState>(
                           // selector: (context, provider) => provider.currentDevice,
                           builder: (context, _, __) {
@@ -196,14 +290,99 @@ class HomePage extends StatelessWidget {
                       ? Container()
                       : Column(
                           children: [
-                            Transform(
-                              transform: Matrix4.identity()
-                                ..setEntry(3, 2, 0.01)
-                                ..rotateY(0.06),
-                              alignment: Alignment.bottomCenter,
+                            Container(
+                              margin: const EdgeInsets.only(
+                                  top: 0, bottom: 10, left: 20),
                               child: FrostedWidget(
-                                height: 395 * theme.heightRatio,
-                                width: 247.5 * theme.widthRatio,
+                                childW: Center(
+                                  child: Container(
+                                    margin: const EdgeInsets.all(10),
+                                    padding:
+                                        EdgeInsets.all(10 * theme.widthRatio),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        StreamBuilder<DateTime>(
+                                          stream: Stream.periodic(
+                                              const Duration(seconds: 1),
+                                              (_) => DateTime.now()),
+                                          builder: (context, snapshot) {
+                                            final currentTime =
+                                                snapshot.data ?? DateTime.now();
+                                            return Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                RichText(
+                                                  text: TextSpan(
+                                                    style: GoogleFonts.exo(
+                                                      fontSize: 30,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.white,
+                                                    ),
+                                                    children: [
+                                                      TextSpan(
+                                                        text: DateFormat(
+                                                                'HH:mm:')
+                                                            .format(
+                                                                currentTime),
+                                                      ),
+                                                      TextSpan(
+                                                        text: DateFormat('ss')
+                                                            .format(
+                                                                currentTime),
+                                                        style: const TextStyle(
+                                                            color: Colors
+                                                                .cyanAccent),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                const SizedBox(height: 8),
+                                                AutoSizeText(
+                                                  DateFormat('EEEE')
+                                                      .format(currentTime),
+                                                  style: const TextStyle(
+                                                    fontSize: 16,
+                                                    color: Colors.white,
+                                                  ),
+                                                  maxFontSize: 16,
+                                                  minFontSize: 8,
+                                                  maxLines: 1,
+                                                ),
+                                                AutoSizeText(
+                                                  DateFormat('d MMMM yyyy')
+                                                      .format(currentTime),
+                                                  style: const TextStyle(
+                                                    fontSize: 16,
+                                                    color: Colors.white,
+                                                  ),
+                                                  maxFontSize: 16,
+                                                  minFontSize: 8,
+                                                  maxLines: 1,
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                height: 175 * theme.heightRatio,
+                                width: 245 * theme.widthRatio,
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(
+                                  top: 0, bottom: 10, left: 20),
+                              child: FrostedWidget(
+                                height: 300 * theme.heightRatio,
+                                width: 250 * theme.widthRatio,
                                 childW: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -241,6 +420,52 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                             ),
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              margin: EdgeInsets.only(
+                                  top: 0,
+                                  bottom: 10 * theme.heightRatio,
+                                  left: 10),
+                              child: FrostedWidget(
+                                childW: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      // Adjust the spacing as needed
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 20),
+                                        child: AutoSizeText(
+                                          '© 2023 Prathamesh Patil.',
+                                          style: GoogleFonts.inter(
+                                            fontSize: 16,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          maxFontSize: 12,
+                                          minFontSize: 10,
+                                          maxLines: 3,
+                                        ).animate().fadeIn(
+                                            delay: 1.seconds,
+                                            duration: .7.seconds),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                height: 120 *
+                                    theme
+                                        .heightRatio, // Adjust the height as needed
+                                width: 250 * theme.widthRatio,
+                              ),
+                            ),
                             const SizedBox(
                               height: 10,
                             ),
@@ -270,8 +495,8 @@ class HomePage extends StatelessWidget {
                                 borderRadius: 100,
                                 isThreeD: true,
                                 backgroundColor: Colors.black,
-                                width: 32.5,
-                                height: 32.5,
+                                width: 140 * theme.widthRatio,
+                                height: 140 * theme.widthRatio,
                                 onPressed: () {
                                   currentState.changeSelectedDevice(
                                     devices[index].device,
@@ -281,7 +506,7 @@ class HomePage extends StatelessWidget {
                                   child: Icon(
                                     devices[index].icon,
                                     color: Colors.white,
-                                    size: 22,
+                                    size: 100 * theme.widthRatio,
                                   ),
                                 ),
                               );
@@ -302,11 +527,12 @@ class HomePage extends StatelessWidget {
                                     ? Pressed.pressed
                                     : Pressed.notPressed,
                                 animate: true,
+                                shadowColor: Colors.white,
                                 borderRadius: 100,
                                 isThreeD: true,
                                 backgroundColor: Colors.black,
-                                width: 32.5,
-                                height: 32.5,
+                                width: 40 * theme.widthRatio,
+                                height: 40 * theme.widthRatio,
                                 onPressed: () {
                                   currentState.changeSelectedDevice(
                                     devices[index].device,
@@ -316,7 +542,7 @@ class HomePage extends StatelessWidget {
                                   child: Icon(
                                     devices[index].icon,
                                     color: Colors.white,
-                                    size: 22,
+                                    size: 30 * theme.widthRatio,
                                   ),
                                 ),
                               );

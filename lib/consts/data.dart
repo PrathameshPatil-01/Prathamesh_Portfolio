@@ -21,7 +21,13 @@ const String twitter = "https://twitter.com/imPBPatil";
 const String resumeLink =
     "https://drive.google.com/file/d/19y-ivY9px_W5u8H25DKzFWcJ-RPEVkl1/view?usp=sharing";
 const String email = "prathameshp800@gmail.com";
-const String introduction = "Prathamesh Patil ";
+String introduction = '''
+  My insatiable curiosity about technology fuels my eagerness to delve into its workings and glean insights from emerging trends. I'm deeply passionate about developing skills and firmly believe that the quality of work shapes the quality of life.
+
+  With a background in science and technical studies, I aim to channel my expertise into the realm of evolutionary technologies. I'm constantly striving to enhance my tech-savviness and am keen on learning from seasoned developers, aspiring to connect and collaborate with them.
+
+  My adeptness in various programming languages empowers me to solve intricate problems and provide efficient solutions. Engaging in diverse development projects, I've assimilated great ideas from senior developers, fostering an understanding of efficient code and program flow.
+''';
 
 const double baseHeight = 790;
 const double baseWidth = 1440;
@@ -43,7 +49,6 @@ List<DeviceModel> devices = [
 
 List<ColorModel> colorPalette = [
   ColorModel(
-    svgPath: "assets/images/cloudRed.svg",
     color: Colors.yellowAccent,
     gradient: const LinearGradient(
       begin: Alignment.bottomLeft,
@@ -53,7 +58,6 @@ List<ColorModel> colorPalette = [
     ),
   ),
   ColorModel(
-    svgPath: "assets/images/cloudyBlue.svg",
     color: const Color.fromARGB(255, 255, 0, 115),
     gradient: const LinearGradient(
       begin: Alignment.topLeft,
@@ -61,7 +65,6 @@ List<ColorModel> colorPalette = [
     ),
   ),
   ColorModel(
-      svgPath: "assets/images/cloudyBlue.svg",
       color: const Color(0xff00d6ca),
       gradient: const LinearGradient(
         colors: [Color(0xff00ebd5), Color(0xff293474)],
@@ -70,7 +73,6 @@ List<ColorModel> colorPalette = [
         end: Alignment.topLeft,
       )),
   ColorModel(
-    svgPath: "assets/images/cloudyBlue.svg",
     color: const Color.fromARGB(255, 33, 47, 243),
     gradient: const LinearGradient(
       begin: Alignment.topLeft,
@@ -82,7 +84,6 @@ List<ColorModel> colorPalette = [
     ),
   ),
   ColorModel(
-    svgPath: "assets/images/cloudyBlue.svg",
     color: Colors.purple,
     gradient: const LinearGradient(
       colors: [
@@ -96,7 +97,6 @@ List<ColorModel> colorPalette = [
     ),
   ),
   ColorModel(
-    svgPath: "assets/images/cloudyBlue.svg",
     color: const Color(0xfff35a32),
     gradient: const LinearGradient(
       begin: Alignment.bottomLeft,

@@ -26,7 +26,6 @@ class CurrentState extends ChangeNotifier {
   void changeGradient(int index) {
     selectedColor = index;
     bgGradient = colorPalette[index].gradient;
-    selectedCloud = colorPalette[index].svgPath;
     notifyListeners();
   }
 

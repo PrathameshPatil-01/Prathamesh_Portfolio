@@ -1,9 +1,7 @@
-import 'dart:async';
 import 'package:custom_button_builder/custom_button_builder.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
 import 'package:pp_portfolio/consts/data.dart';
 import 'package:pp_portfolio/providers/current_state.dart';
 import 'package:provider/provider.dart';
@@ -12,31 +10,10 @@ import 'package:analog_clock/analog_clock.dart';
 class PhoneHomeScreen extends StatefulWidget {
   const PhoneHomeScreen({super.key});
   @override
-  createState() => AnimatedDigitalClockState();
+  createState() => PhoneHomeScreenState();
 }
 
-class AnimatedDigitalClockState extends State<PhoneHomeScreen> {
-  String currentTime = '';
-  String currentDay = '';
-  String currentDate = '';
-
-  @override
-  void initState() {
-    super.initState();
-    updateTime();
-  }
-
-  void updateTime() {
-    DateTime now = DateTime.now();
-    setState(() {
-      currentTime = DateFormat.Hm().format(now);
-      currentDay = DateFormat.EEEE().format(now);
-      currentDate = DateFormat.yMd().format(now);
-    });
-
-    // Update time every second
-    Future.delayed(const Duration(seconds: 1), updateTime);
-  }
+class PhoneHomeScreenState extends State<PhoneHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
