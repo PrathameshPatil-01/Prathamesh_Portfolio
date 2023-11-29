@@ -266,13 +266,13 @@ List<SkillsModel> skills = [
   SkillsModel(
     skillName: "SQLalchemy",
     colorS: const Color(0xFFD71F00),
-    assetPath: "assets/icons/SQLAlchemy.svg",
+    assetPath: "assets/icons/SQLalchemy.svg",
     hrefPath: "https://www.sqlalchemy.org/",
   ),
   SkillsModel(
     skillName: "Opencv",
     colorS: const Color(0xFF27338e),
-    assetPath: "assets/icons/OpenCV.svg",
+    assetPath: "assets/icons/Opencv.svg",
     hrefPath: "https://opencv.org/",
   ),
   // SkillsModel(

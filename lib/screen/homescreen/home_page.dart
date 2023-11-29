@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
       );
     } else {
       currentState.changeSelectedDevice(
-        devices[2].device,
+        devices[1].device,
       );
     }
 
@@ -118,7 +118,7 @@ class HomePage extends StatelessWidget {
                                                   text: 'Prathamesh\n',
                                                   style: GoogleFonts.exo(
                                                     fontSize:
-                                                        0.045 * size.height,
+                                                        0.04 * size.height,
                                                     color: Colors.white,
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -127,7 +127,7 @@ class HomePage extends StatelessWidget {
                                                   text: 'Patil',
                                                   style: GoogleFonts.exo(
                                                     fontSize:
-                                                        0.045 * size.height,
+                                                        0.04 * size.height,
                                                     color: Colors.white,
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -135,7 +135,7 @@ class HomePage extends StatelessWidget {
                                               ],
                                             ),
                                             textAlign: TextAlign.center,
-                                            maxFontSize: 25,
+                                            maxFontSize: 22,
                                             minFontSize: 5,
                                             maxLines: 2,
                                           ).animate().fadeIn(
@@ -174,13 +174,13 @@ class HomePage extends StatelessWidget {
                                         child: AutoSizeText(
                                           'I am eager to leverage my development skills to create intuitive and innovative applications. Committed to continuous learning and building impactful solutions.',
                                           style: GoogleFonts.inter(
-                                            fontSize: 0.03 * size.height,
+                                            fontSize: 0.027 * size.height,
                                             color: Colors.white,
                                             fontWeight: FontWeight.normal,
                                           ),
                                           textAlign: TextAlign.center,
-                                          maxFontSize: 14,
-                                          minFontSize: 10,
+                                          maxFontSize: 12,
+                                          minFontSize: 8,
                                           maxLines: 8,
                                         ).animate().fadeIn(
                                             delay: 1.seconds,
@@ -336,7 +336,7 @@ class HomePage extends StatelessWidget {
                                         EdgeInsets.all(0.007 * size.height),
                                     child: Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                          CrossAxisAlignment.center,
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
@@ -349,13 +349,13 @@ class HomePage extends StatelessWidget {
                                                 snapshot.data ?? DateTime.now();
                                             return Column(
                                               crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                                  CrossAxisAlignment.center,
                                               children: [
                                                 AutoSizeText.rich(
                                                   TextSpan(
                                                     style: GoogleFonts.exo(
                                                       fontSize:
-                                                          0.045 * size.height,
+                                                          0.043 * size.height,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       color: Colors.white,
@@ -377,7 +377,7 @@ class HomePage extends StatelessWidget {
                                                       ),
                                                     ],
                                                   ),
-                                                  maxFontSize: 25,
+                                                  maxFontSize: 23,
                                                   minFontSize: 8,
                                                   maxLines: 1,
                                                 ),
@@ -387,7 +387,7 @@ class HomePage extends StatelessWidget {
                                                   style: TextStyle(
                                                     fontSize:
                                                         0.025 * size.height,
-                                                    color: Colors.white,
+                                                    color: Colors.black,
                                                   ),
                                                   maxFontSize: 15,
                                                   minFontSize: 8,
