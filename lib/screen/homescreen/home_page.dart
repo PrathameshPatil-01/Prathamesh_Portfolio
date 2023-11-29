@@ -4,13 +4,14 @@ import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:pp_portfolio/consts/data.dart';
 import 'package:pp_portfolio/providers/current_state.dart';
 import 'package:pp_portfolio/providers/theme_provider.dart';
 import 'package:pp_portfolio/widgets/frosted_container.dart';
 import 'package:pp_portfolio/widgets/rain_cloud.dart';
 import 'package:provider/provider.dart';
-import 'package:intl/intl.dart';
+
 import 'phone_screen_wrapper.dart';
 
 class HomePage extends StatelessWidget {
@@ -26,10 +27,20 @@ class HomePage extends StatelessWidget {
     theme.widthRatio = theme.size.width / baseWidth;
     theme.heightRatio = theme.size.height / baseHeight;
     bool phone = false;
-    if (size.width < 1100) {
+    bool hWeb = false;
+    if (size.width < 1200 && size.height < 400) {
+      hWeb = true;
+      currentState.changeSelectedDevice(
+        Devices.macOS.wideMonitor,
+      );
+    } else if (size.width < 1100) {
       phone = true;
       currentState.changeSelectedDevice(
         devices[1].device,
+      );
+    } else {
+      currentState.changeSelectedDevice(
+        devices[2].device,
       );
     }
 
@@ -69,14 +80,11 @@ class HomePage extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 10,
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   /// Left side frosted Containers
-                  phone
+                  phone || hWeb
                       ? Container()
                       : Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -109,7 +117,8 @@ class HomePage extends StatelessWidget {
                                                 TextSpan(
                                                   text: 'Prathamesh\n',
                                                   style: GoogleFonts.exo(
-                                                    fontSize: 25,
+                                                    fontSize:
+                                                        0.045 * size.height,
                                                     color: Colors.white,
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -117,7 +126,8 @@ class HomePage extends StatelessWidget {
                                                 TextSpan(
                                                   text: 'Patil',
                                                   style: GoogleFonts.exo(
-                                                    fontSize: 25,
+                                                    fontSize:
+                                                        0.045 * size.height,
                                                     color: Colors.white,
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -126,7 +136,7 @@ class HomePage extends StatelessWidget {
                                             ),
                                             textAlign: TextAlign.center,
                                             maxFontSize: 25,
-                                            minFontSize: 10,
+                                            minFontSize: 5,
                                             maxLines: 2,
                                           ).animate().fadeIn(
                                               delay: .8.seconds,
@@ -164,7 +174,7 @@ class HomePage extends StatelessWidget {
                                         child: AutoSizeText(
                                           'I am eager to leverage my development skills to create intuitive and innovative applications. Committed to continuous learning and building impactful solutions.',
                                           style: GoogleFonts.inter(
-                                            fontSize: 14,
+                                            fontSize: 0.03 * size.height,
                                             color: Colors.white,
                                             fontWeight: FontWeight.normal,
                                           ),
@@ -208,7 +218,7 @@ class HomePage extends StatelessWidget {
                                           child: AutoSizeText(
                                             "Powered by Flutter with passion ❤️",
                                             style: GoogleFonts.exo(
-                                              fontSize: 20,
+                                              fontSize: 0.038 * size.height,
                                               color: Colors.white,
                                               fontWeight: FontWeight.bold,
                                             ),
@@ -235,7 +245,7 @@ class HomePage extends StatelessWidget {
                   // main mobile screen
                   Column(
                     children: [
-                      phone
+                      phone && !hWeb
                           ? Wrap(
                               children: [
                                 ...List.generate(
@@ -254,8 +264,8 @@ class HomePage extends StatelessWidget {
                                       isThreeD: true,
                                       backgroundColor:
                                           colorPalette[index].color,
-                                      width: 80 * theme.widthRatio,
-                                      height: 80 * theme.widthRatio,
+                                      width: size.height * 0.04,
+                                      height: size.height * 0.04,
                                       onPressed: () {
                                         currentState.changeGradient(index);
                                       },
@@ -265,28 +275,53 @@ class HomePage extends StatelessWidget {
                               ],
                             )
                           : Container(),
-                      SizedBox(
-                        height: phone ? size.height * 0.8 : size.height * 0.9,
-                        width: phone ? size.width * 0.8 : null,
-                        child: Consumer<CurrentState>(
-                          // selector: (context, provider) => provider.currentDevice,
-                          builder: (context, _, __) {
-                            return DeviceFrame(
-                              device: currentState.currentDevice,
-                              screen: Container(
-                                  decoration: BoxDecoration(
-                                      gradient: currentState.bgGradient),
-                                  child: ScreenWrapper(
-                                      childG: currentState.currentScreen)),
-                            );
-                          },
-                        ),
-                      ),
+                      hWeb
+                          ? SizedBox(
+                              height: size.height * 0.9,
+                              width: size.width * 0.9,
+                              child: Consumer<CurrentState>(
+                                // selector: (context, provider) => provider.currentDevice,
+                                builder: (context, _, __) {
+                                  return SingleChildScrollView(
+                                    child: DeviceFrame(
+                                      device: Devices.macOS.wideMonitor,
+                                      isFrameVisible: false,
+                                      screen: Container(
+                                          decoration: BoxDecoration(
+                                              gradient:
+                                                  currentState.bgGradient),
+                                          child: ScreenWrapper(
+                                              childG:
+                                                  currentState.currentScreen)),
+                                    ),
+                                  );
+                                },
+                              ),
+                            )
+                          : SizedBox(
+                              height:
+                                  phone ? size.height * 0.8 : size.height * 0.9,
+                              width: phone ? size.width * 0.9 : null,
+                              child: Consumer<CurrentState>(
+                                // selector: (context, provider) => provider.currentDevice,
+                                builder: (context, _, __) {
+                                  return DeviceFrame(
+                                    device: currentState.currentDevice,
+                                    screen: Container(
+                                        decoration: BoxDecoration(
+                                            gradient: currentState.bgGradient),
+                                        child: ScreenWrapper(
+                                            childG:
+                                                currentState.currentScreen)),
+                                  );
+                                },
+                              ),
+                            ),
                     ],
                   ),
 
                   /// Right side frosted containers
-                  phone
+                  phone || hWeb
                       ? Container()
                       : Column(
                           children: [
@@ -298,7 +333,7 @@ class HomePage extends StatelessWidget {
                                   child: Container(
                                     margin: const EdgeInsets.all(10),
                                     padding:
-                                        EdgeInsets.all(10 * theme.widthRatio),
+                                        EdgeInsets.all(0.007 * size.height),
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -316,10 +351,11 @@ class HomePage extends StatelessWidget {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                RichText(
-                                                  text: TextSpan(
+                                                AutoSizeText.rich(
+                                                  TextSpan(
                                                     style: GoogleFonts.exo(
-                                                      fontSize: 30,
+                                                      fontSize:
+                                                          0.045 * size.height,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       color: Colors.white,
@@ -341,27 +377,31 @@ class HomePage extends StatelessWidget {
                                                       ),
                                                     ],
                                                   ),
+                                                  maxFontSize: 25,
+                                                  minFontSize: 8,
+                                                  maxLines: 1,
                                                 ),
-                                                const SizedBox(height: 8),
                                                 AutoSizeText(
                                                   DateFormat('EEEE')
                                                       .format(currentTime),
-                                                  style: const TextStyle(
-                                                    fontSize: 16,
+                                                  style: TextStyle(
+                                                    fontSize:
+                                                        0.025 * size.height,
                                                     color: Colors.white,
                                                   ),
-                                                  maxFontSize: 16,
+                                                  maxFontSize: 15,
                                                   minFontSize: 8,
                                                   maxLines: 1,
                                                 ),
                                                 AutoSizeText(
                                                   DateFormat('d MMMM yyyy')
                                                       .format(currentTime),
-                                                  style: const TextStyle(
-                                                    fontSize: 16,
+                                                  style: TextStyle(
+                                                    fontSize:
+                                                        0.025 * size.height,
                                                     color: Colors.white,
                                                   ),
-                                                  maxFontSize: 16,
+                                                  maxFontSize: 15,
                                                   minFontSize: 8,
                                                   maxLines: 1,
                                                 ),
@@ -405,8 +445,8 @@ class HomePage extends StatelessWidget {
                                               isThreeD: true,
                                               backgroundColor:
                                                   colorPalette[index].color,
-                                              width: 50 * theme.widthRatio,
-                                              height: 50 * theme.widthRatio,
+                                              width: 0.07 * size.height,
+                                              height: 0.07 * size.height,
                                               onPressed: () {
                                                 currentState
                                                     .changeGradient(index);
@@ -445,7 +485,7 @@ class HomePage extends StatelessWidget {
                                         child: AutoSizeText(
                                           '© 2023 Prathamesh Patil.',
                                           style: GoogleFonts.inter(
-                                            fontSize: 16,
+                                            fontSize: 0.035 * size.height,
                                             color: Colors.white,
                                             fontWeight: FontWeight.normal,
                                           ),
@@ -474,82 +514,86 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 10 * theme.heightRatio,
+                height: 0.02 * size.height,
               ),
 
               /// bottom button for device selection
-              phone
-                  ? Selector<CurrentState, DeviceInfo>(
-                      selector: (context, p1) => p1.currentDevice,
-                      builder: (context, _, __) {
-                        return Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            ...List.generate(devices.length - 1, (index) {
-                              return CustomButton(
-                                pressed: currentState.currentDevice ==
-                                        devices[index].device
-                                    ? Pressed.pressed
-                                    : Pressed.notPressed,
-                                animate: true,
-                                borderRadius: 100,
-                                isThreeD: true,
-                                backgroundColor: Colors.black,
-                                width: 140 * theme.widthRatio,
-                                height: 140 * theme.widthRatio,
-                                onPressed: () {
-                                  currentState.changeSelectedDevice(
-                                    devices[index].device,
-                                  );
-                                },
-                                child: Center(
-                                  child: Icon(
-                                    devices[index].icon,
-                                    color: Colors.white,
-                                    size: 100 * theme.widthRatio,
-                                  ),
+              if (hWeb)
+                Container()
+              else if (phone)
+                Selector<CurrentState, DeviceInfo>(
+                    selector: (context, p1) => p1.currentDevice,
+                    builder: (context, _, __) {
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          ...List.generate(devices.length - 1, (index) {
+                            return CustomButton(
+                              pressed: currentState.currentDevice ==
+                                      devices[index].device
+                                  ? Pressed.pressed
+                                  : Pressed.notPressed,
+                              animate: true,
+                              borderRadius: 100,
+                              isThreeD: true,
+                              shadowColor: Colors.white,
+                              backgroundColor: Colors.black,
+                              width: size.height * 0.05,
+                              height: size.height * 0.05,
+                              onPressed: () {
+                                currentState.changeSelectedDevice(
+                                  devices[index].device,
+                                );
+                              },
+                              child: Center(
+                                child: Icon(
+                                  devices[index].icon,
+                                  color: Colors.white,
+                                  size: size.height * 0.035,
                                 ),
-                              );
-                            })
-                          ],
-                        );
-                      })
-                  : Selector<CurrentState, DeviceInfo>(
-                      selector: (context, p1) => p1.currentDevice,
-                      builder: (context, _, __) {
-                        return Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            ...List.generate(devices.length, (index) {
-                              return CustomButton(
-                                pressed: currentState.currentDevice ==
-                                        devices[index].device
-                                    ? Pressed.pressed
-                                    : Pressed.notPressed,
-                                animate: true,
-                                shadowColor: Colors.white,
-                                borderRadius: 100,
-                                isThreeD: true,
-                                backgroundColor: Colors.black,
-                                width: 40 * theme.widthRatio,
-                                height: 40 * theme.widthRatio,
-                                onPressed: () {
-                                  currentState.changeSelectedDevice(
-                                    devices[index].device,
-                                  );
-                                },
-                                child: Center(
-                                  child: Icon(
-                                    devices[index].icon,
-                                    color: Colors.white,
-                                    size: 30 * theme.widthRatio,
-                                  ),
+                              ),
+                            );
+                          })
+                        ],
+                      );
+                    })
+              else
+                Selector<CurrentState, DeviceInfo>(
+                    selector: (context, p1) => p1.currentDevice,
+                    builder: (context, _, __) {
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          ...List.generate(devices.length, (index) {
+                            return CustomButton(
+                              pressed: currentState.currentDevice ==
+                                      devices[index].device
+                                  ? Pressed.pressed
+                                  : Pressed.notPressed,
+                              animate: true,
+                              shadowColor: Colors.white,
+                              borderRadius: 100,
+                              isThreeD: true,
+                              backgroundColor: Colors.black,
+                              width: size.height * 0.045,
+                              height: size.height * 0.045,
+                              onPressed: () {
+                                currentState.changeSelectedDevice(
+                                  devices[index].device,
+                                );
+                              },
+                              child: Center(
+                                child: Icon(
+                                  devices[index].icon,
+                                  color: Colors.white,
+                                  size: size.height * 0.035,
                                 ),
-                              );
-                            })
-                          ],
-                        );
-                      })
+                              ),
+                            );
+                          })
+                        ],
+                      );
+                    }),
             ],
           ),
         ],

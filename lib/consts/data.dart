@@ -176,7 +176,7 @@ List<SkillsModel> skills = [
   SkillsModel(
     skillName: "C++",
     colorS: const Color(0xFF00599C),
-    assetPath: "assets/icons/Cpp.svg",
+    assetPath: "assets/icons/CPP.svg",
     hrefPath: "https://en.wikipedia.org/wiki/C%2B%2B",
   ),
   SkillsModel(
@@ -188,7 +188,7 @@ List<SkillsModel> skills = [
   SkillsModel(
     skillName: "Python",
     colorS: const Color(0xFFFFD43B),
-    assetPath: "assets/icons/Python-light.svg",
+    assetPath: "assets/icons/Python-Light.svg",
     hrefPath: "https://www.python.org/",
   ),
   SkillsModel(
@@ -225,7 +225,7 @@ List<SkillsModel> skills = [
     skillName: "Flask",
     colorS: const Color(0xFF000000),
     assetPath: "assets/icons/Flask-Light.svg",
-    hrefPath: "https://palletsprojects.com/p/jinja/",
+    hrefPath: "https://flask.palletsprojects.com/en/3.0.x/",
   ),
   SkillsModel(
     skillName: "Jinja",
@@ -264,53 +264,53 @@ List<SkillsModel> skills = [
     hrefPath: "https://plotly.com/",
   ),
   SkillsModel(
-    skillName: "SQLAlchemy",
+    skillName: "SQLalchemy",
     colorS: const Color(0xFFD71F00),
     assetPath: "assets/icons/SQLAlchemy.svg",
     hrefPath: "https://www.sqlalchemy.org/",
   ),
   SkillsModel(
-    skillName: "OpenCV",
+    skillName: "Opencv",
     colorS: const Color(0xFF27338e),
     assetPath: "assets/icons/OpenCV.svg",
     hrefPath: "https://opencv.org/",
   ),
-  SkillsModel(
-    skillName: "ExpressJS",
-    colorS: const Color(0xFF000000),
-    assetPath: "assets/icons/ExpressJS-Light.svg",
-    hrefPath: "https://expressjs.com/",
-  ),
-  SkillsModel(
-    skillName: "Axios",
-    colorS: const Color(0xFF671ddf),
-    assetPath: "assets/icons/Axios.svg",
-    hrefPath: "https://axios-http.com/",
-  ),
-  SkillsModel(
-    skillName: "NodeJS",
-    colorS: const Color(0xFF339933),
-    assetPath: "assets/icons/NodeJS-Light.svg",
-    hrefPath: "https://nodejs.org/",
-  ),
-  SkillsModel(
-    skillName: "npm",
-    colorS: const Color(0xFFCB3837),
-    assetPath: "assets/icons/npm.svg",
-    hrefPath: "https://www.npmjs.com/",
-  ),
-  SkillsModel(
-    skillName: "Postman",
-    colorS: const Color(0xFFFF6C37),
-    assetPath: "assets/icons/Postman.svg",
-    hrefPath: "https://www.postman.com/",
-  ),
-  SkillsModel(
-    skillName: "React",
-    colorS: const Color(0xFF20232A),
-    assetPath: "assets/icons/React-Light.svg",
-    hrefPath: "https://reactjs.org/",
-  ),
+  // SkillsModel(
+  //   skillName: "ExpressJS",
+  //   colorS: const Color(0xFF000000),
+  //   assetPath: "assets/icons/ExpressJS-Light.svg",
+  //   hrefPath: "https://expressjs.com/",
+  // ),
+  // SkillsModel(
+  //   skillName: "Axios",
+  //   colorS: const Color(0xFF671ddf),
+  //   assetPath: "assets/icons/Axios.svg",
+  //   hrefPath: "https://axios-http.com/",
+  // ),
+  // SkillsModel(
+  //   skillName: "NodeJS",
+  //   colorS: const Color(0xFF339933),
+  //   assetPath: "assets/icons/NodeJS-Light.svg",
+  //   hrefPath: "https://nodejs.org/",
+  // ),
+  // SkillsModel(
+  //   skillName: "npm",
+  //   colorS: const Color(0xFFCB3837),
+  //   assetPath: "assets/icons/npm.svg",
+  //   hrefPath: "https://www.npmjs.com/",
+  // ),
+  // SkillsModel(
+  //   skillName: "Postman",
+  //   colorS: const Color(0xFFFF6C37),
+  //   assetPath: "assets/icons/Postman.svg",
+  //   hrefPath: "https://www.postman.com/",
+  // ),
+  // SkillsModel(
+  //   skillName: "React",
+  //   colorS: const Color(0xFF20232A),
+  //   assetPath: "assets/icons/React-Light.svg",
+  //   hrefPath: "https://reactjs.org/",
+  // ),
   SkillsModel(
     skillName: "SQLite",
     colorS: const Color(0xFF07405E),

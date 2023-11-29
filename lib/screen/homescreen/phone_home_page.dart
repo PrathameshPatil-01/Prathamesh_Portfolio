@@ -1,3 +1,4 @@
+import 'package:analog_clock/analog_clock.dart';
 import 'package:custom_button_builder/custom_button_builder.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pp_portfolio/consts/data.dart';
 import 'package:pp_portfolio/providers/current_state.dart';
 import 'package:provider/provider.dart';
-import 'package:analog_clock/analog_clock.dart';
 
 class PhoneHomeScreen extends StatefulWidget {
   const PhoneHomeScreen({super.key});
@@ -14,12 +14,11 @@ class PhoneHomeScreen extends StatefulWidget {
 }
 
 class PhoneHomeScreenState extends State<PhoneHomeScreen> {
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     CurrentState currentState =
-        Provider.of<CurrentState>(context, listen: true);
+        Provider.of<CurrentState>(context);
     return Container(
       height: size.height,
       padding: const EdgeInsets.only(top: 45, left: 20, right: 20),
@@ -56,7 +55,7 @@ class PhoneHomeScreenState extends State<PhoneHomeScreen> {
                   showTicks: true,
                   showDigitalClock: false,
                   datetime: DateTime.now(),
-                  tickColor:currentState.bgGradient.colors[1] ,
+                  tickColor: currentState.bgGradient.colors[1],
                 ),
                 const SizedBox(
                   height: 10,
@@ -130,18 +129,18 @@ class PhoneHomeScreenState extends State<PhoneHomeScreen> {
                                 ? ButtonAsset(apps[index].assetPath!,
                                     width: currentState.currentDevice ==
                                             Devices.ios.iPad
-                                        ? 50
-                                        : 40,
+                                        ? 0.05 * size.height
+                                        : 0.045 * size.height,
                                     height: currentState.currentDevice ==
                                             Devices.ios.iPad
-                                        ? 50
-                                        : 40)
+                                        ? 0.05 * size.height
+                                        : 0.045 * size.height)
                                 : null,
                             child: apps[index].assetPath == null
                                 ? Center(
                                     child: Icon(
                                       apps[index].icon,
-                                      size: 30,
+                                      size: 0.04 * size.height,
                                       color: Colors.black,
                                     ),
                                   )
@@ -157,8 +156,8 @@ class PhoneHomeScreenState extends State<PhoneHomeScreen> {
                                 style: GoogleFonts.openSans(
                                     fontSize: currentState.currentDevice ==
                                             Devices.ios.iPad
-                                        ? 18
-                                        : 13,
+                                        ? 0.016 * size.height
+                                        : 0.014 * size.height,
                                     color: Colors.white,
                                     fontWeight: FontWeight.w400),
                               ),
@@ -218,12 +217,12 @@ class PhoneHomeScreenState extends State<PhoneHomeScreen> {
                                 ? ButtonAsset(socialApps[index].assetPath!,
                                     width: currentState.currentDevice ==
                                             Devices.ios.iPad
-                                        ? 50
-                                        : 35,
+                                        ? 0.04 * size.height
+                                        : 0.04 * size.height,
                                     height: currentState.currentDevice ==
                                             Devices.ios.iPad
-                                        ? 50
-                                        : 35)
+                                        ? 0.04 * size.height
+                                        : 0.04 * size.height)
                                 : null,
                             child: socialApps[index].assetPath == null
                                 ? Center(
@@ -245,8 +244,8 @@ class PhoneHomeScreenState extends State<PhoneHomeScreen> {
                                 style: GoogleFonts.openSans(
                                     fontSize: currentState.currentDevice ==
                                             Devices.ios.iPad
-                                        ? 18
-                                        : 13,
+                                        ? 0.016 * size.height
+                                        : 0.014 * size.height,
                                     color: Colors.white,
                                     fontWeight: FontWeight.w400),
                               ),
