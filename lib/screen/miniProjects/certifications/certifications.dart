@@ -55,7 +55,7 @@ class Certification extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         fontSize: currentState.currentDevice == Devices.ios.iPad
                             ? 26
-                            : 18,
+                            : 16,
                       ),
                     ),
                     subtitle: Padding(
@@ -66,7 +66,7 @@ class Certification extends StatelessWidget {
                             fontSize:
                                 currentState.currentDevice == Devices.ios.iPad
                                     ? 22
-                                    : 15,
+                                    : 14,
                             color: const Color.fromARGB(255, 45, 45, 50)),
                       ),
                     ),
@@ -137,8 +137,8 @@ class Certification extends StatelessWidget {
                                           fontSize:
                                               currentState.currentDevice ==
                                                       Devices.ios.iPad
-                                                  ? 22
-                                                  : 14,
+                                                  ? 20
+                                                  : 13,
                                           decoration: TextDecoration.underline,
                                         ),
                                         maxLines: 2,

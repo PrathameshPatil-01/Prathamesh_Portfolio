@@ -56,7 +56,7 @@ class Education extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: currentState.currentDevice == Devices.ios.iPad
                         ? 26
-                        : 18,
+                        : 16,
                   ),
                 ),
                 subtitle: Padding(
@@ -66,7 +66,7 @@ class Education extends StatelessWidget {
                     style: GoogleFonts.inter(
                         fontSize: currentState.currentDevice == Devices.ios.iPad
                             ? 22
-                            : 15,
+                            : 13,
                         color: const Color.fromARGB(255, 40, 40, 40)),
                   ),
                 ),
@@ -96,7 +96,7 @@ class Education extends StatelessWidget {
                               fontSize:
                                   currentState.currentDevice == Devices.ios.iPad
                                       ? 24
-                                      : 15,
+                                      : 14,
                             ),
                             maxLines: 3,
                           ),

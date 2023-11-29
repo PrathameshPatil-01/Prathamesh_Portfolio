@@ -28,7 +28,7 @@ class ScreenWrapper extends StatelessWidget {
                   children: [
                     Text(
                       instance.title ?? "",
-                      style: GoogleFonts.inter(fontSize: 25),
+                      style: GoogleFonts.inter(fontSize: 21),
                     ),
                     IconButton(
                       icon: const Icon(

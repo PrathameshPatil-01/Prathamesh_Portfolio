@@ -60,7 +60,7 @@ class _AboutMeState extends State<AboutMe> {
                     style: GoogleFonts.openSans(
                         fontSize: currentState.currentDevice == Devices.ios.iPad
                             ? 30
-                            : 20,
+                            : 18,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -69,7 +69,7 @@ class _AboutMeState extends State<AboutMe> {
                   style: GoogleFonts.openSans(
                       fontSize: currentState.currentDevice == Devices.ios.iPad
                           ? 25
-                          : 18,
+                          : 16,
                       fontWeight: FontWeight.w500),
                 ).animate().fadeIn(duration: const Duration(milliseconds: 500))
               ],
