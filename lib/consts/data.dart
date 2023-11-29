@@ -275,45 +275,42 @@ List<SkillsModel> skills = [
     assetPath: "assets/icons/OpenCV.svg",
     hrefPath: "https://opencv.org/",
   ),
-  
-  // working on this skills
-
-  // SkillsModel(
-  //   skillName: "ExpressJS",
-  //   colorS: const Color(0xFF000000),
-  //   assetPath: "assets/icons/ExpressJS-Light.svg",
-  //   hrefPath: "https://expressjs.com/",
-  // ),
-  // SkillsModel(
-  //   skillName: "Axios",
-  //   colorS: const Color(0xFF671ddf),
-  //   assetPath: "assets/icons/Axios.svg",
-  //   hrefPath: "https://axios-http.com/",
-  // ),
-  // SkillsModel(
-  //   skillName: "NodeJS",
-  //   colorS: const Color(0xFF339933),
-  //   assetPath: "assets/icons/NodeJS-Light.svg",
-  //   hrefPath: "https://nodejs.org/",
-  // ),
-  // SkillsModel(
-  //   skillName: "npm",
-  //   colorS: const Color(0xFFCB3837),
-  //   assetPath: "assets/icons/npm.svg",
-  //   hrefPath: "https://www.npmjs.com/",
-  // ),
-  // SkillsModel(
-  //   skillName: "Postman",
-  //   colorS: const Color(0xFFFF6C37),
-  //   assetPath: "assets/icons/Postman.svg",
-  //   hrefPath: "https://www.postman.com/",
-  // ),
-  // SkillsModel(
-  //   skillName: "React",
-  //   colorS: const Color(0xFF20232A),
-  //   assetPath: "assets/icons/React-Light.svg",
-  //   hrefPath: "https://reactjs.org/",
-  // ),
+  SkillsModel(
+    skillName: "ExpressJS",
+    colorS: const Color(0xFF000000),
+    assetPath: "assets/icons/ExpressJS-Light.svg",
+    hrefPath: "https://expressjs.com/",
+  ),
+  SkillsModel(
+    skillName: "Axios",
+    colorS: const Color(0xFF671ddf),
+    assetPath: "assets/icons/Axios.svg",
+    hrefPath: "https://axios-http.com/",
+  ),
+  SkillsModel(
+    skillName: "NodeJS",
+    colorS: const Color(0xFF339933),
+    assetPath: "assets/icons/NodeJS-Light.svg",
+    hrefPath: "https://nodejs.org/",
+  ),
+  SkillsModel(
+    skillName: "npm",
+    colorS: const Color(0xFFCB3837),
+    assetPath: "assets/icons/npm.svg",
+    hrefPath: "https://www.npmjs.com/",
+  ),
+  SkillsModel(
+    skillName: "Postman",
+    colorS: const Color(0xFFFF6C37),
+    assetPath: "assets/icons/Postman.svg",
+    hrefPath: "https://www.postman.com/",
+  ),
+  SkillsModel(
+    skillName: "React",
+    colorS: const Color(0xFF20232A),
+    assetPath: "assets/icons/React-Light.svg",
+    hrefPath: "https://reactjs.org/",
+  ),
   SkillsModel(
     skillName: "SQLite",
     colorS: const Color(0xFF07405E),
