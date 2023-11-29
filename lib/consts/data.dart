@@ -176,7 +176,7 @@ List<SkillsModel> skills = [
   SkillsModel(
     skillName: "C++",
     colorS: const Color(0xFF00599C),
-    assetPath: "assets/icons/CPP.svg",
+    assetPath: "assets/icons/Cpp.svg",
     hrefPath: "https://en.wikipedia.org/wiki/C%2B%2B",
   ),
   SkillsModel(
@@ -188,7 +188,7 @@ List<SkillsModel> skills = [
   SkillsModel(
     skillName: "Python",
     colorS: const Color(0xFFFFD43B),
-    assetPath: "assets/icons/Python-Light.svg",
+    assetPath: "assets/icons/Python-light.svg",
     hrefPath: "https://www.python.org/",
   ),
   SkillsModel(
@@ -266,13 +266,13 @@ List<SkillsModel> skills = [
   SkillsModel(
     skillName: "SQLAlchemy",
     colorS: const Color(0xFFD71F00),
-    assetPath: "assets/icons/SQLalchemy.svg",
+    assetPath: "assets/icons/SQLAlchemy.svg",
     hrefPath: "https://www.sqlalchemy.org/",
   ),
   SkillsModel(
     skillName: "OpenCV",
     colorS: const Color(0xFF27338e),
-    assetPath: "assets/icons/Opencv.svg",
+    assetPath: "assets/icons/OpenCV.svg",
     hrefPath: "https://opencv.org/",
   ),
   
